@@ -16,7 +16,7 @@ export function About() {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
-    <section id="about" className="py-[260px] px-6 bg-white border-y border-[#e5e5e5] flex flex-col items-center text-center">
+    <section id="about" className="py-[160px] px-6 bg-white border-y border-[#e5e5e5] flex flex-col items-center text-center">
       <div className="w-full max-w-[1100px] mx-auto text-center flex flex-col items-center">
         {/* Section label */}
         <motion.p
@@ -92,7 +92,7 @@ export function About() {
             className="flex flex-col gap-5 w-full"
           >
             {/* Profile Card */}
-            <div className="bg-white border border-[#e5e5e5] rounded-xl p-8 flex flex-col items-center text-center gap-6">
+            <div className="bg-white border border-[#e5e5e5] rounded-xl p-[48px] flex flex-col items-center text-center gap-6">
               {/* Avatar + name */}
               <div className="flex flex-col sm:flex-row items-center gap-5 justify-center">
                 <div className="w-16 h-16 rounded-full bg-[#111111] flex items-center justify-center shrink-0">
@@ -136,7 +136,7 @@ export function About() {
             </div>
 
             {/* Quote card */}
-            <div className="bg-[#111111] rounded-xl p-6 flex flex-col items-center text-center">
+            <div className="bg-[#111111] rounded-xl p-[48px] flex flex-col items-center text-center">
               <p className="text-sm text-[#d1d5db] leading-relaxed italic text-center">
                 &ldquo;Every site I build is fast, technically sound, and structured
                 for search from the ground up. No fluff, no filler — just results.&rdquo;

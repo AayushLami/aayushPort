@@ -44,7 +44,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex flex-col items-center justify-center text-center overflow-hidden pt-[360px] pb-[280px] bg-white"
+      className="relative flex flex-col items-center justify-center text-center overflow-hidden pt-[180px] pb-[160px] bg-white"
       aria-label="Hero"
     >
       {/* Subtle dot grid — light on white */}

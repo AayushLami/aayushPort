@@ -12,7 +12,7 @@ export function Pricing() {
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
-    <section id="pricing" className="pt-[260px] pb-[260px] px-6 bg-white flex flex-col items-center text-center">
+    <section id="pricing" className="pt-[160px] pb-[160px] px-6 bg-white flex flex-col items-center text-center">
       <div className="w-full max-w-[1100px] mx-auto flex flex-col items-center text-center">
         {/* Header */}
         <motion.div
@@ -20,7 +20,7 @@ export function Pricing() {
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="mb-[80px] text-center flex flex-col items-center"
+          className="mb-[60px] text-center flex flex-col items-center"
         >
           <p className="text-xs font-semibold text-[#6b7280] tracking-[0.2em] uppercase mb-4">
             Pricing
@@ -64,7 +64,7 @@ export function Pricing() {
                 </div>
               )}
 
-              <div className="flex flex-col items-center text-center gap-8 p-[40px] flex-1">
+              <div className="flex flex-col items-center text-center gap-8 p-[48px] flex-1">
                 {/* Plan name + best for */}
                 <div className="text-center flex flex-col items-center">
                   <h3 className={`font-heading text-lg font-bold mb-2 ${plan.popular ? "text-white" : "text-[#111111]"}`}>

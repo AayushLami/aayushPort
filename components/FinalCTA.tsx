@@ -93,7 +93,7 @@ export function FinalCTA() {
   return (
     <section
       id="contact"
-      className="py-[260px] px-6 bg-white flex flex-col items-center text-center"
+      className="py-[160px] px-6 bg-white flex flex-col items-center text-center"
     >
       <div
         ref={ref}
