@@ -32,7 +32,7 @@ export function Process() {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
-    <section id="process" className="py-[120px] px-6 bg-white border-y border-[#e5e5e5] flex flex-col items-center text-center">
+    <section id="process" className="pt-[140px] pb-[140px] px-6 bg-white border-y border-[#e5e5e5] flex flex-col items-center text-center">
       <div className="w-full max-w-[1100px] mx-auto flex flex-col items-center text-center">
         {/* Header */}
         <motion.div
@@ -40,7 +40,7 @@ export function Process() {
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="mb-16 text-center"
+          className="mb-[60px] text-center"
         >
           <p className="text-xs font-semibold text-[#6b7280] tracking-[0.2em] uppercase mb-4">
             Process
@@ -51,7 +51,7 @@ export function Process() {
         </motion.div>
 
         {/* Steps */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[40px] w-full">
           {steps.map((step, i) => {
             const Icon = step.icon;
             return (
@@ -60,7 +60,7 @@ export function Process() {
                 initial={{ opacity: 0, y: 24 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, ease: "easeOut", delay: i * 0.1 }}
-                className="bg-white border border-[#e5e5e5] rounded-xl p-8 flex flex-col items-center text-center gap-5 hover:border-[#d1d5db] hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] transition-all duration-300 group"
+                className="bg-white border border-[#e5e5e5] rounded-xl p-[40px] flex flex-col items-center text-center gap-5 hover:border-[#d1d5db] hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] transition-all duration-300 group"
               >
                 <div className="w-11 h-11 bg-[#f3f4f6] rounded-xl flex items-center justify-center shrink-0 group-hover:bg-[#111111] transition-colors duration-300">
                   <Icon size={20} className="text-[#374151] group-hover:text-white transition-colors duration-300" />
