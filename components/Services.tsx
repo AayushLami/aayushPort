@@ -43,14 +43,14 @@ export function Services() {
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
-    <section id="services" className="pt-[140px] pb-[140px] px-6 bg-white flex flex-col items-center text-center">
+    <section id="services" className="pt-[260px] pb-[260px] px-6 bg-white flex flex-col items-center text-center">
       <div className="w-full max-w-[1100px] mx-auto flex flex-col items-center text-center">
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="mb-[60px] text-center"
+          className="mb-[80px] text-center"
           ref={ref}
         >
           <p className="text-xs font-semibold text-[#6b7280] tracking-[0.2em] uppercase mb-4">

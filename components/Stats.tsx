@@ -14,7 +14,7 @@ export function Stats() {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
-    <section className="pt-[140px] pb-[140px] px-6 bg-white flex flex-col items-center text-center">
+    <section className="pt-[260px] pb-[260px] px-6 bg-white flex flex-col items-center text-center">
       <div
         ref={ref}
         className="w-full max-w-[1100px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-[40px]"

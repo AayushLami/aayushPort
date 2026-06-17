@@ -32,7 +32,7 @@ export function Process() {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
-    <section id="process" className="pt-[140px] pb-[140px] px-6 bg-white border-y border-[#e5e5e5] flex flex-col items-center text-center">
+    <section id="process" className="pt-[260px] pb-[260px] px-6 bg-white border-y border-[#e5e5e5] flex flex-col items-center text-center">
       <div className="w-full max-w-[1100px] mx-auto flex flex-col items-center text-center">
         {/* Header */}
         <motion.div
@@ -40,7 +40,7 @@ export function Process() {
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="mb-[60px] text-center"
+          className="mb-[80px] text-center"
         >
           <p className="text-xs font-semibold text-[#6b7280] tracking-[0.2em] uppercase mb-4">
             Process
