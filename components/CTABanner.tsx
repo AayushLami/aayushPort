@@ -11,7 +11,7 @@ export function CTABanner() {
   return (
     <section
       id="contact"
-      className="py-32 px-6 bg-[#111111] border-t border-b border-[#1f1f1f]"
+      className="py-32 px-6 bg-[#0a0a0a] border-t border-b border-[#1f1f1f]"
     >
       <div
         ref={ref}

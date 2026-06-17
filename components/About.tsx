@@ -107,11 +107,11 @@ export function About() {
                     </span>
                     <div className="flex-1 h-1.5 bg-white/5 rounded-none overflow-hidden">
                       <div
-                        className="h-full bg-[#4ade80]"
+                        className="h-full bg-gradient-to-r from-emerald-500 to-green-400"
                         style={{ width: `${metric.score}%` }}
                       />
                     </div>
-                    <span className="text-sm font-bold text-[#4ade80] w-8 text-right">
+                    <span className="text-sm font-bold text-green-400 w-8 text-right">
                       {metric.score}
                     </span>
                   </div>
@@ -119,9 +119,9 @@ export function About() {
               </div>
 
               <div className="pt-2 border-t border-white/5 space-y-1.5">
-                <p className="text-xs text-[#4ade80]">✓ No render-blocking resources</p>
-                <p className="text-xs text-[#4ade80]">✓ Properly sized images</p>
-                <p className="text-xs text-[#4ade80]">✓ Efficient cache policy</p>
+                <p className="text-xs text-green-400">✓ No render-blocking resources</p>
+                <p className="text-xs text-green-400">✓ Properly sized images</p>
+                <p className="text-xs text-green-400">✓ Efficient cache policy</p>
               </div>
             </div>
           </motion.div>

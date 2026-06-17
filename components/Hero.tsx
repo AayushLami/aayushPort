@@ -77,7 +77,7 @@ export function Hero() {
         </div>
 
         {/* Typewriter headline */}
-        <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] tracking-tight min-h-[1.2em]">
+        <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] tracking-tight min-h-[4.4em] sm:min-h-[3.3em] md:min-h-[2.2em]">
           {displayed}
           <span
             className="inline-block w-[3px] h-[0.85em] bg-white ml-1 align-middle"

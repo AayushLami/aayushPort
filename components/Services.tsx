@@ -59,10 +59,12 @@ export function Services() {
               <motion.div
                 key={i}
                 variants={fadeUp}
-                className="bg-[#0a0a0a] border border-white/10 p-8 flex flex-col gap-6 group hover:border-white/25 transition-colors duration-300"
+                whileHover={{ y: -4 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+                className="bg-[#0a0a0a] border border-white/10 p-8 flex flex-col gap-6 group hover:border-white/20 hover:shadow-[0_20px_50px_rgba(255,255,255,0.01)] transition-all duration-300"
               >
-                <div className="w-12 h-12 border border-white/15 flex items-center justify-center group-hover:border-white/35 transition-colors shrink-0">
-                  <Icon size={20} className="text-white" />
+                <div className="w-12 h-12 border border-white/15 flex items-center justify-center group-hover:border-white/30 transition-colors duration-300 shrink-0">
+                  <Icon size={20} className="text-white group-hover:scale-110 transition-transform duration-300" />
                 </div>
                 <div className="flex flex-col gap-3">
                   <h3 className="font-display text-lg font-bold text-white">

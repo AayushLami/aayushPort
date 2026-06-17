@@ -1,12 +1,13 @@
 @import "tailwindcss";
 
-/* ─── Custom properties ─────────────────────────────────────────── */
-:root {
-  --bg: #0a0a0a;
-  --surface: #111111;
-  --border: #1f1f1f;
-  --white: #ffffff;
-  --muted: #888888;
+/* ─── Tailwind v4 custom theme ──────────────────────────────────── */
+@theme {
+  /* Space Grotesk for headings — creates font-display utility */
+  --font-display: var(--font-space-grotesk), "Space Grotesk", system-ui, sans-serif;
+  /* Override built-in font-mono to use Space Mono */
+  --font-mono: var(--font-space-mono), "Space Mono", ui-monospace, monospace;
+  /* Body font via CSS variable from next/font */
+  --font-sans: var(--font-inter), "Inter", system-ui, sans-serif;
 }
 
 /* ─── Base resets ───────────────────────────────────────────────── */
@@ -25,19 +26,8 @@ html {
 }
 
 body {
-  background-color: var(--bg);
-  color: var(--white);
-  font-family: var(--font-inter), system-ui, sans-serif;
-  line-height: 1.6;
-}
-
-/* ─── Font classes ──────────────────────────────────────────────── */
-.font-display {
-  font-family: var(--font-space-grotesk), system-ui, sans-serif;
-}
-
-.font-mono {
-  font-family: var(--font-space-mono), monospace;
+  background-color: #0a0a0a;
+  color: #ffffff;
 }
 
 /* ─── Focus rings ───────────────────────────────────────────────── */
@@ -48,50 +38,28 @@ body {
 
 /* ─── Typewriter cursor blink ───────────────────────────────────── */
 @keyframes blink {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 /* ─── Dot-grid drift animation ──────────────────────────────────── */
 @keyframes drift {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 32px 32px;
-  }
+  0% { background-position: 0 0; }
+  100% { background-position: 32px 32px; }
 }
 
 /* ─── Scrollbar styling ─────────────────────────────────────────── */
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: var(--bg);
-}
-::-webkit-scrollbar-thumb {
-  background: var(--border);
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--muted);
-}
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0a0a0a; }
+::-webkit-scrollbar-thumb { background: #1f1f1f; }
+::-webkit-scrollbar-thumb:hover { background: #888888; }
 
 /* ─── Selection ─────────────────────────────────────────────────── */
-::selection {
-  background: rgba(255, 255, 255, 0.15);
-  color: #fff;
-}
+::selection { background: rgba(255,255,255,0.15); color: #fff; }
 
 /* ─── Reduced motion ────────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;

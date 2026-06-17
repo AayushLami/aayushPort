@@ -44,15 +44,15 @@ export function Pricing() {
             <motion.div
               key={plan.id}
               variants={fadeUp}
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.2 }}
+              whileHover={{ scale: 1.01, y: -4 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
               className={`
                 relative flex flex-col bg-[#111111] p-8
                 border transition-all duration-300
                 ${
                   plan.popular
-                    ? "border-white/40 shadow-[0_0_60px_rgba(255,255,255,0.04)]"
-                    : "border-white/10 hover:border-white/25"
+                    ? "border-white/30 shadow-[0_20px_50px_rgba(255,255,255,0.02)]"
+                    : "border-white/10 hover:border-white/20 hover:shadow-[0_20px_50px_rgba(255,255,255,0.01)]"
                 }
               `}
             >
@@ -67,7 +67,7 @@ export function Pricing() {
 
               <div className="flex flex-col gap-7 flex-1">
                 {/* Plan name + best for */}
-                <div className={plan.popular ? "mt-5" : ""}>
+                <div>
                   <h3 className="font-display text-xl font-bold text-white mb-1.5">
                     {plan.name}
                   </h3>

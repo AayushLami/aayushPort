@@ -100,7 +100,14 @@ export function Navbar() {
               {link.label}
             </a>
           ))}
-          <Button href="#contact" variant="primary" size="sm">
+          <Button
+            href="#contact"
+            variant="primary"
+            size="sm"
+            onClick={() =>
+              document.getElementById("mobile-menu")?.classList.add("hidden")
+            }
+          >
             Get Started
           </Button>
         </div>
