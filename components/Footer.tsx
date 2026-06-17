@@ -1,4 +1,4 @@
-import { Mail } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 
 // Inline SVGs for social icons not available in this lucide version
 function GitHubIcon() {
@@ -45,6 +45,13 @@ export function Footer() {
 
         {/* Right */}
         <div className="flex items-center gap-6">
+          <a
+            href="tel:9083386832"
+            className="text-[#888888] hover:text-white transition-colors"
+            aria-label="Call Aayush"
+          >
+            <Phone size={16} />
+          </a>
           <a
             href="mailto:aayush@rankly.dev"
             className="text-[#888888] hover:text-white transition-colors"

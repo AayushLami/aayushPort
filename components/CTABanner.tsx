@@ -39,16 +39,26 @@ export function CTABanner() {
           initial={{ opacity: 0, y: 16 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="flex flex-col items-center gap-3"
+          className="flex flex-col items-center gap-4"
         >
-          <Button
-            href="mailto:aayush@rankly.dev"
-            variant="primary"
-            size="lg"
-            className="min-w-[200px]"
-          >
-            Book a Free Call
-          </Button>
+          <div className="flex flex-col sm:flex-row items-center gap-4">
+            <Button
+              href="mailto:aayush@rankly.dev"
+              variant="primary"
+              size="lg"
+              className="min-w-[200px]"
+            >
+              Book a Free Call
+            </Button>
+            <Button
+              href="tel:9083386832"
+              variant="secondary"
+              size="lg"
+              className="min-w-[200px]"
+            >
+              Call Directly
+            </Button>
+          </div>
           <p className="text-xs text-[#888888]">
             No commitment. 30 minutes. Real advice.
           </p>
