@@ -31,14 +31,14 @@ function LinkedInIcon() {
 
 export function Footer() {
   return (
-    <footer className="border-t border-[#1f1f1f] py-10 px-6">
+    <footer className="bg-[#111111] border-t border-white/10 py-10 px-6">
       <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
         {/* Left */}
         <div className="flex flex-col gap-1">
           <span className="font-heading text-base font-bold text-white">
             Rankly
           </span>
-          <span className="text-xs text-[#888888]">
+          <span className="text-xs text-[#6b7280]">
             © 2025 Aayush Lamichhane
           </span>
         </div>
@@ -47,7 +47,7 @@ export function Footer() {
         <div className="flex flex-wrap items-center gap-x-8 gap-y-4">
           <a
             href="tel:9083386832"
-            className="text-sm text-[#888888] hover:text-white transition-colors flex items-center gap-2"
+            className="text-sm text-[#9ca3af] hover:text-white transition-colors flex items-center gap-2"
             aria-label="Call Aayush"
           >
             <Phone size={14} />
@@ -55,7 +55,7 @@ export function Footer() {
           </a>
           <a
             href="mailto:aayush@rankly.dev"
-            className="text-sm text-[#888888] hover:text-white transition-colors flex items-center gap-2"
+            className="text-sm text-[#9ca3af] hover:text-white transition-colors flex items-center gap-2"
             aria-label="Email Aayush"
           >
             <Mail size={14} />
@@ -66,7 +66,7 @@ export function Footer() {
               href="https://linkedin.com/in/aayushlamichhane"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#888888] hover:text-white transition-colors"
+              className="text-[#9ca3af] hover:text-white transition-colors"
               aria-label="LinkedIn"
             >
               <LinkedInIcon />
@@ -75,7 +75,7 @@ export function Footer() {
               href="https://github.com/aayushlamichhane"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#888888] hover:text-white transition-colors"
+              className="text-[#9ca3af] hover:text-white transition-colors"
               aria-label="GitHub"
             >
               <GitHubIcon />

@@ -96,7 +96,7 @@ export function CTABanner() {
   return (
     <section
       id="contact"
-      className="py-32 px-6 bg-[#0a0a0a] border-t border-b border-[#1f1f1f]"
+      className="py-32 px-6 bg-[#111111]"
     >
       <div
         ref={ref}
@@ -106,7 +106,7 @@ export function CTABanner() {
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="font-heading text-4xl sm:text-5xl md:text-6xl font-bold text-white"
+          className="font-heading text-4xl sm:text-5xl md:text-6xl font-bold text-white tracking-tight"
         >
           Ready to rank?
         </motion.h2>
@@ -115,7 +115,7 @@ export function CTABanner() {
           initial={{ opacity: 0, y: 16 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-[#888888] text-base sm:text-lg max-w-md"
+          className="text-[#9ca3af] text-base sm:text-lg max-w-md"
         >
           Let&apos;s build something that actually works for your business.
         </motion.p>
@@ -144,7 +144,7 @@ export function CTABanner() {
               Call 908-338-6832
             </Button>
           </div>
-          <p className="text-xs text-[#888888]">
+          <p className="text-xs text-[#6b7280]">
             No commitment. 15 minutes. Real advice.
           </p>
         </motion.div>

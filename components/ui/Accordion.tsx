@@ -28,19 +28,19 @@ export function Accordion({ items }: AccordionProps) {
         return (
           <div
             key={item.id}
-            className="bg-[#0a0a0a] border border-white/10 rounded-xl overflow-hidden hover:border-white/20 transition-colors duration-300"
+            className="bg-white border border-[#e5e7eb] rounded-xl overflow-hidden hover:border-[#d1d5db] hover:shadow-[0_4px_16px_rgba(0,0,0,0.05)] transition-all duration-300"
           >
             <button
-              className="w-full flex items-center justify-between px-6 py-5 text-left group focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-inset"
+              className="w-full flex items-center justify-between px-6 py-5 text-left group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#111] focus-visible:ring-inset"
               onClick={() => toggle(item.id)}
               aria-expanded={isOpen}
               aria-controls={`accordion-${item.id}`}
               id={`accordion-btn-${item.id}`}
             >
-              <span className="text-base font-medium text-white pr-8 group-hover:text-white/80 transition-colors">
+              <span className="text-sm font-semibold text-[#111111] pr-8 group-hover:text-[#374151] transition-colors">
                 {item.question}
               </span>
-              <span className="shrink-0 text-white/50 group-hover:text-white transition-colors">
+              <span className="shrink-0 text-[#9ca3af] group-hover:text-[#374151] transition-colors">
                 {isOpen ? <Minus size={18} /> : <Plus size={18} />}
               </span>
             </button>
@@ -56,9 +56,11 @@ export function Accordion({ items }: AccordionProps) {
                   transition={{ duration: 0.3, ease: "easeInOut" }}
                   className="overflow-hidden"
                 >
-                  <p className="px-6 pb-6 text-[#aaaaaa] leading-relaxed text-sm">
-                    {item.answer}
-                  </p>
+                  <div className="px-6 pb-6 border-t border-[#f3f4f6] pt-4">
+                    <p className="text-sm text-[#374151] leading-relaxed">
+                      {item.answer}
+                    </p>
+                  </div>
                 </motion.div>
               )}
             </AnimatePresence>

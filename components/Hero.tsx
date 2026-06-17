@@ -19,7 +19,6 @@ export function Hero() {
 
   useEffect(() => {
     let i = 0;
-    // Check prefers-reduced-motion
     const prefersReduced = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;
@@ -45,7 +44,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 bg-[#0a0a0a]"
       aria-label="Hero"
     >
       {/* Dot grid background */}
@@ -53,12 +52,12 @@ export function Hero() {
         className="absolute inset-0 pointer-events-none"
         style={{
           backgroundImage:
-            "radial-gradient(circle, rgba(255,255,255,0.07) 1px, transparent 1px)",
+            "radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px)",
           backgroundSize: "32px 32px",
           animation: "drift 20s linear infinite",
         }}
       />
-      {/* Gradient overlay to fade the dots at edges */}
+      {/* Gradient overlay */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -70,10 +69,11 @@ export function Hero() {
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center flex flex-col items-center gap-8">
         {/* Eyebrow */}
         <div className="flex items-center gap-3">
-          <span className="w-8 h-px bg-white" />
-          <span className="text-xs font-medium text-[#888888] tracking-[0.2em] uppercase">
+          <span className="w-8 h-px bg-white/40" />
+          <span className="text-xs font-semibold text-[#9ca3af] tracking-[0.2em] uppercase">
             Rank Higher. Get Found. Grow.
           </span>
+          <span className="w-8 h-px bg-white/40" />
         </div>
 
         {/* Typewriter headline */}
@@ -95,13 +95,11 @@ export function Hero() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              className="text-base sm:text-lg text-[#888888] max-w-2xl leading-relaxed"
+              className="text-base sm:text-lg text-[#9ca3af] max-w-2xl leading-relaxed"
             >
               I build fast, SEO-optimized websites that rank on Google and turn
               visitors into customers.{" "}
-              <span className="text-white/60">
-                No templates. No fluff.
-              </span>
+              <span className="text-white/60">No templates. No fluff.</span>
             </motion.p>
           )}
         </AnimatePresence>
@@ -118,8 +116,8 @@ export function Hero() {
               <Button href="#pricing" variant="primary" size="lg">
                 See Pricing
               </Button>
-              <Button href="#work" variant="secondary" size="lg">
-                View My Work
+              <Button href="#about" variant="secondary" size="lg">
+                About Me
               </Button>
             </motion.div>
           )}
@@ -132,14 +130,14 @@ export function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-wrap items-center justify-center gap-6 mt-2"
+              className="flex flex-wrap items-center justify-center gap-8 mt-2 border-t border-white/10 pt-8 w-full max-w-md"
             >
               {stats.map((stat, i) => (
                 <div key={i} className="flex flex-col items-center gap-0.5">
                   <span className="font-heading text-xl font-bold text-white">
                     {stat.value}
                   </span>
-                  <span className="text-xs text-[#888888] tracking-wide">
+                  <span className="text-xs text-[#6b7280] tracking-wide">
                     {stat.label}
                   </span>
                 </div>
@@ -150,7 +148,7 @@ export function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-30">
         <span className="text-[10px] text-white tracking-widest uppercase">
           Scroll
         </span>

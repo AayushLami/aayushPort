@@ -2,11 +2,8 @@
 
 /* ─── Tailwind v4 custom theme ──────────────────────────────────── */
 @theme {
-  /* Space Grotesk for headings — creates font-heading utility */
   --font-heading: var(--font-space-grotesk), "Space Grotesk", system-ui, sans-serif;
-  /* Override built-in font-mono to use Space Mono */
   --font-mono: var(--font-space-mono), "Space Mono", ui-monospace, monospace;
-  /* Body font via CSS variable from next/font */
   --font-sans: var(--font-inter), "Inter", system-ui, sans-serif;
 }
 
@@ -26,13 +23,13 @@ html {
 }
 
 body {
-  background-color: #0a0a0a;
-  color: #ffffff;
+  background-color: #f5f5f5;
+  color: #111111;
 }
 
 /* ─── Focus rings ───────────────────────────────────────────────── */
 :focus-visible {
-  outline: 2px solid #fff;
+  outline: 2px solid #111;
   outline-offset: 3px;
 }
 
@@ -50,12 +47,12 @@ body {
 
 /* ─── Scrollbar styling ─────────────────────────────────────────── */
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #0a0a0a; }
-::-webkit-scrollbar-thumb { background: #1f1f1f; }
-::-webkit-scrollbar-thumb:hover { background: #888888; }
+::-webkit-scrollbar-track { background: #f5f5f5; }
+::-webkit-scrollbar-thumb { background: #d1d5db; }
+::-webkit-scrollbar-thumb:hover { background: #9ca3af; }
 
 /* ─── Selection ─────────────────────────────────────────────────── */
-::selection { background: rgba(255,255,255,0.15); color: #fff; }
+::selection { background: rgba(0,0,0,0.1); color: #111; }
 
 /* ─── Reduced motion ────────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
