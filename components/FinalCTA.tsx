@@ -104,7 +104,7 @@ export function FinalCTA() {
           initial={{ opacity: 0, y: 16 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.4 }}
-          className="text-xs font-semibold text-[#6b7280] tracking-[0.2em] uppercase"
+          className="text-xs font-semibold text-[#6b7280] tracking-[0.2em] uppercase mb-[24px]"
         >
           READY TO START?
         </motion.p>
