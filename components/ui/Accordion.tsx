@@ -28,7 +28,7 @@ export function Accordion({ items }: AccordionProps) {
         return (
           <div
             key={item.id}
-            className="bg-white border border-[#e5e7eb] rounded-xl overflow-hidden hover:border-[#d1d5db] hover:shadow-[0_4px_16px_rgba(0,0,0,0.05)] transition-all duration-300"
+            className="bg-white border border-[#e5e5e5] rounded-xl overflow-hidden hover:border-[#d1d5db] hover:shadow-[0_4px_16px_rgba(0,0,0,0.05)] transition-all duration-300"
           >
             <button
               className="w-full flex items-center justify-between px-6 py-5 text-left group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#111] focus-visible:ring-inset"
@@ -56,7 +56,7 @@ export function Accordion({ items }: AccordionProps) {
                   transition={{ duration: 0.3, ease: "easeInOut" }}
                   className="overflow-hidden"
                 >
-                  <div className="px-6 pb-6 border-t border-[#f3f4f6] pt-4">
+                  <div className="px-6 pb-6 border-t border-[#e5e5e5] pt-4">
                     <p className="text-sm text-[#374151] leading-relaxed">
                       {item.answer}
                     </p>

@@ -12,7 +12,7 @@ export function Pricing() {
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
-    <section id="pricing" className="py-32 px-6 bg-white border-y border-[#e5e7eb]">
+    <section id="pricing" className="py-32 px-6 bg-white">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <motion.div
@@ -51,7 +51,7 @@ export function Pricing() {
                 ${
                   plan.popular
                     ? "bg-[#111111] border-[#111111] shadow-[0_20px_60px_rgba(0,0,0,0.12)]"
-                    : "bg-[#f9fafb] border-[#e5e7eb] hover:border-[#d1d5db] hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)]"
+                    : "bg-white border-[#e5e5e5] hover:border-[#d1d5db] hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)]"
                 }
               `}
             >
@@ -66,7 +66,7 @@ export function Pricing() {
 
               <div className="flex flex-col gap-8 p-8 sm:p-10 flex-1">
                 {/* Plan name + best for */}
-                <div>
+                <div className="text-center">
                   <h3 className={`font-heading text-lg font-bold mb-2 ${plan.popular ? "text-white" : "text-[#111111]"}`}>
                     {plan.name}
                   </h3>
@@ -76,7 +76,7 @@ export function Pricing() {
                 </div>
 
                 {/* Price */}
-                <div className="flex items-baseline gap-2">
+                <div className="flex items-baseline justify-center gap-2">
                   <span className={`font-mono text-5xl font-bold leading-none ${plan.popular ? "text-white" : "text-[#111111]"}`}>
                     {plan.price}
                   </span>
@@ -86,7 +86,7 @@ export function Pricing() {
                 </div>
 
                 {/* Divider */}
-                <div className={`w-full h-px ${plan.popular ? "bg-white/10" : "bg-[#e5e7eb]"}`} />
+                <div className={`w-full h-px ${plan.popular ? "bg-white/10" : "bg-[#e5e5e5]"}`} />
 
                 {/* Features */}
                 <ul className="flex flex-col gap-4 flex-1">
@@ -105,11 +105,11 @@ export function Pricing() {
                 </ul>
 
                 {/* Addon badge */}
-                <div>
+                <div className="text-center">
                   <span className={`text-xs px-3 py-1.5 rounded-md inline-block border ${
                     plan.popular
                       ? "border-white/20 text-[#9ca3af]"
-                      : "border-[#e5e7eb] text-[#6b7280]"
+                      : "border-[#e5e5e5] text-[#6b7280]"
                   }`}>
                     {plan.addon}
                   </span>

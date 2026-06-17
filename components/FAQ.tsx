@@ -10,7 +10,7 @@ export function FAQ() {
   const isInView = useInView(ref, { once: true, amount: 0.15 });
 
   return (
-    <section id="faq" className="py-32 px-6 bg-[#f5f5f5]">
+    <section id="faq" className="py-32 px-6 bg-white border-y border-[#e5e5e5]">
       <div className="max-w-3xl mx-auto">
         {/* Header */}
         <motion.div

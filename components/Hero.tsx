@@ -137,7 +137,7 @@ export function Hero() {
                   <span className="font-heading text-xl font-bold text-white">
                     {stat.value}
                   </span>
-                  <span className="text-xs text-[#6b7280] tracking-wide">
+                  <span className="text-xs text-[#9ca3af] tracking-wide">
                     {stat.label}
                   </span>
                 </div>

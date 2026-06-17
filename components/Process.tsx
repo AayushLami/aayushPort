@@ -32,7 +32,7 @@ export function Process() {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
-    <section id="process" className="py-32 px-6 bg-[#f5f5f5]">
+    <section id="process" className="py-32 px-6 bg-white border-y border-[#e5e5e5]">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <motion.div
@@ -60,7 +60,7 @@ export function Process() {
                 initial={{ opacity: 0, y: 24 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, ease: "easeOut", delay: i * 0.1 }}
-                className="bg-white border border-[#e5e7eb] rounded-xl p-8 flex flex-col gap-5 hover:border-[#d1d5db] hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] transition-all duration-300 group"
+                className="bg-white border border-[#e5e5e5] rounded-xl p-8 flex flex-col items-center text-center gap-5 hover:border-[#d1d5db] hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] transition-all duration-300 group"
               >
                 <div className="w-11 h-11 bg-[#f3f4f6] rounded-xl flex items-center justify-center shrink-0 group-hover:bg-[#111111] transition-colors duration-300">
                   <Icon size={20} className="text-[#374151] group-hover:text-white transition-colors duration-300" />

@@ -16,39 +16,38 @@ export function About() {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
-    <section id="about" className="py-32 px-6 bg-white border-y border-[#e5e7eb]">
-      <div className="max-w-6xl mx-auto">
+    <section id="about" className="py-32 px-6 bg-white border-y border-[#e5e5e5]">
+      <div className="max-w-6xl mx-auto text-center">
         {/* Section label */}
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="text-xs font-semibold text-[#6b7280] tracking-[0.2em] uppercase mb-4 text-center"
+          className="text-xs font-semibold text-[#6b7280] tracking-[0.2em] uppercase mb-4"
         >
           About
         </motion.p>
 
+        <motion.h2
+          initial={{ opacity: 0, y: 16 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="font-heading text-4xl sm:text-5xl font-bold text-[#111111] mb-16"
+        >
+          Aayush Lamichhane
+        </motion.h2>
+
         <div
           ref={ref}
-          className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start mt-10"
+          className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start text-left"
         >
           {/* Left — Text */}
           <div className="flex flex-col gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
-              <h2 className="font-heading text-4xl sm:text-5xl font-bold text-[#111111] leading-tight">
-                Aayush Lamichhane
-              </h2>
-            </motion.div>
-
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-[#374151] leading-relaxed text-base max-w-lg"
+              className="text-[#374151] leading-relaxed text-base"
             >
               I work with businesses across the USA to build websites that don&apos;t
               just look good — they generate leads, increase sales, and grow revenue.
@@ -93,7 +92,7 @@ export function About() {
             className="flex flex-col gap-5"
           >
             {/* Profile Card */}
-            <div className="bg-[#f9fafb] border border-[#e5e7eb] rounded-xl p-8 flex flex-col gap-6">
+            <div className="bg-white border border-[#e5e5e5] rounded-xl p-8 flex flex-col gap-6">
               {/* Avatar + name */}
               <div className="flex items-center gap-5">
                 <div className="w-16 h-16 rounded-full bg-[#111111] flex items-center justify-center shrink-0">
@@ -112,9 +111,9 @@ export function About() {
               </div>
 
               {/* Divider */}
-              <div className="w-full h-px bg-[#e5e7eb]" />
+              <div className="w-full h-px bg-[#e5e5e5]" />
 
-              {/* Stat box */}
+              {/* Stat boxes */}
               <div className="grid grid-cols-3 gap-4">
                 {[
                   { value: "10+", label: "Sites Built" },
@@ -123,7 +122,7 @@ export function About() {
                 ].map((stat) => (
                   <div
                     key={stat.label}
-                    className="flex flex-col items-center text-center bg-white border border-[#e5e7eb] rounded-lg py-4 px-2"
+                    className="flex flex-col items-center text-center bg-white border border-[#e5e5e5] rounded-lg py-4 px-2"
                   >
                     <span className="font-heading text-xl font-bold text-[#111111]">
                       {stat.value}
