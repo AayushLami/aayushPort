@@ -43,7 +43,7 @@ export function Services() {
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
-    <section id="services" className="pt-[160px] pb-[160px] px-6 bg-white flex flex-col items-center text-center">
+    <section id="services" className="pt-[140px] pb-[140px] px-6 bg-white flex flex-col items-center text-center">
       <div className="w-full max-w-[1100px] mx-auto flex flex-col items-center text-center">
         {/* Section header */}
         <motion.div
@@ -76,7 +76,7 @@ export function Services() {
                 variants={fadeUp}
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.25, ease: "easeOut" }}
-                className="bg-white border border-[#e5e5e5] rounded-xl p-[48px] flex flex-col items-center text-center gap-4 group hover:border-[#d1d5db] hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] transition-all duration-300"
+                className="bg-white border border-[#e5e5e5] rounded-xl p-[40px] flex flex-col items-center text-center gap-4 group hover:border-[#d1d5db] hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] transition-all duration-300"
               >
                 <div className="w-10 h-10 bg-[#f3f4f6] rounded-lg flex items-center justify-center shrink-0 group-hover:bg-[#111111] transition-colors duration-300">
                   <Icon
