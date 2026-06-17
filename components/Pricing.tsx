@@ -47,7 +47,7 @@ export function Pricing() {
               whileHover={{ scale: 1.01, y: -4 }}
               transition={{ duration: 0.3, ease: "easeOut" }}
               className={`
-                relative flex flex-col bg-[#111111] p-8
+                flex flex-col bg-[#111111] p-8
                 border transition-all duration-300
                 ${
                   plan.popular
@@ -56,22 +56,21 @@ export function Pricing() {
                 }
               `}
             >
-              {/* Most Popular badge */}
-              {plan.popular && (
-                <div className="absolute -top-px left-8">
-                  <span className="bg-white text-black text-[10px] font-bold tracking-widest uppercase px-3 py-1 inline-block">
-                    Most Popular
-                  </span>
-                </div>
-              )}
-
               <div className="flex flex-col gap-7 flex-1">
                 {/* Plan name + best for */}
-                <div>
-                  <h3 className="font-display text-xl font-bold text-white mb-1.5">
-                    {plan.name}
-                  </h3>
-                  <p className="text-xs text-[#888888] leading-relaxed">{plan.bestFor}</p>
+                <div className="flex flex-col gap-3">
+                  {/* Most Popular badge — sits above plan name, in flow */}
+                  {plan.popular && (
+                    <span className="self-start bg-white text-black text-[10px] font-bold tracking-widest uppercase px-3 py-1">
+                      Most Popular
+                    </span>
+                  )}
+                  <div>
+                    <h3 className="font-display text-xl font-bold text-white mb-1.5">
+                      {plan.name}
+                    </h3>
+                    <p className="text-xs text-[#888888] leading-relaxed">{plan.bestFor}</p>
+                  </div>
                 </div>
 
                 {/* Price */}

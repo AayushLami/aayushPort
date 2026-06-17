@@ -8,7 +8,7 @@ export function About() {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
-    <section id="about" className="py-28 px-6 bg-[#0a0a0a]">
+    <section id="about" className="py-32 px-6 bg-[#0a0a0a]">
       <div className="max-w-7xl mx-auto">
         <div
           ref={ref}

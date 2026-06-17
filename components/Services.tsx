@@ -28,7 +28,7 @@ export function Services() {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
-    <section id="services" className="py-28 px-6 bg-[#111111] border-y border-[#1f1f1f]">
+    <section id="services" className="py-32 px-6 bg-[#111111] border-y border-[#1f1f1f]">
       <div className="max-w-7xl mx-auto">
         {/* Section header */}
         <motion.div

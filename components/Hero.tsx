@@ -72,7 +72,7 @@ export function Hero() {
         <div className="flex items-center gap-3">
           <span className="w-8 h-px bg-white" />
           <span className="text-xs font-medium text-[#888888] tracking-[0.2em] uppercase">
-            SEO-Optimized Websites
+            Rank Higher. Get Found. Grow.
           </span>
         </div>
 
