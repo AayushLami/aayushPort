@@ -18,12 +18,12 @@ export function FAQ() {
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="mb-14"
+          className="mb-16 text-center"
         >
-          <p className="text-xs font-medium text-[#888888] tracking-[0.2em] uppercase mb-4">
+          <p className="text-xs font-medium text-[#888888] tracking-[0.2em] uppercase mb-5">
             FAQ
           </p>
-          <h2 className="font-display text-4xl sm:text-5xl font-bold text-white">
+          <h2 className="font-heading text-4xl sm:text-5xl font-bold text-white">
             Common questions
           </h2>
         </motion.div>

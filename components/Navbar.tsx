@@ -35,7 +35,7 @@ export function Navbar() {
         {/* Logo */}
         <a
           href="#"
-          className="font-display text-xl font-bold text-white tracking-tight hover:opacity-80 transition-opacity"
+          className="font-heading text-xl font-bold text-white tracking-tight hover:opacity-80 transition-opacity"
           aria-label="Rankly — Home"
         >
           Rankly

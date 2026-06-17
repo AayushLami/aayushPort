@@ -2,8 +2,8 @@
 
 /* ─── Tailwind v4 custom theme ──────────────────────────────────── */
 @theme {
-  /* Space Grotesk for headings — creates font-display utility */
-  --font-display: var(--font-space-grotesk), "Space Grotesk", system-ui, sans-serif;
+  /* Space Grotesk for headings — creates font-heading utility */
+  --font-heading: var(--font-space-grotesk), "Space Grotesk", system-ui, sans-serif;
   /* Override built-in font-mono to use Space Mono */
   --font-mono: var(--font-space-mono), "Space Mono", ui-monospace, monospace;
   /* Body font via CSS variable from next/font */

@@ -106,7 +106,7 @@ export function CTABanner() {
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-white"
+          className="font-heading text-4xl sm:text-5xl md:text-6xl font-bold text-white"
         >
           Ready to rank?
         </motion.h2>
@@ -168,7 +168,7 @@ export function CTABanner() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 16 }}
               transition={{ duration: 0.3, ease: "easeOut" }}
-              className="relative z-10 w-full max-w-md bg-[#111111] border border-white/10 p-8 flex flex-col gap-6"
+              className="relative z-10 w-full max-w-md bg-[#111111] border border-white/10 rounded-xl p-8 flex flex-col gap-6"
             >
               {/* Close Button */}
               <button
@@ -188,7 +188,7 @@ export function CTABanner() {
                   <div className="w-12 h-12 border border-white/20 bg-white/5 flex items-center justify-center">
                     <span className="text-white font-bold text-lg">✓</span>
                   </div>
-                  <h3 className="font-display text-xl font-bold text-white">
+                  <h3 className="font-heading text-xl font-bold text-white">
                     Request Received!
                   </h3>
                   <p className="text-sm text-[#888888] max-w-[280px]">
@@ -198,7 +198,7 @@ export function CTABanner() {
               ) : (
                 <>
                   <div className="flex flex-col gap-1.5">
-                    <h3 className="font-display text-2xl font-bold text-white">
+                    <h3 className="font-heading text-2xl font-bold text-white">
                       Book a Demo
                     </h3>
                     <p className="text-xs text-[#888888]">

@@ -22,13 +22,16 @@ export function Accordion({ items }: AccordionProps) {
   };
 
   return (
-    <div className="divide-y divide-white/10 border-t border-b border-white/10">
+    <div className="flex flex-col gap-3">
       {items.map((item) => {
         const isOpen = openId === item.id;
         return (
-          <div key={item.id}>
+          <div
+            key={item.id}
+            className="bg-[#0a0a0a] border border-white/10 rounded-xl overflow-hidden hover:border-white/20 transition-colors duration-300"
+          >
             <button
-              className="w-full flex items-center justify-between py-5 text-left group focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-inset"
+              className="w-full flex items-center justify-between px-6 py-5 text-left group focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-inset"
               onClick={() => toggle(item.id)}
               aria-expanded={isOpen}
               aria-controls={`accordion-${item.id}`}
@@ -53,7 +56,7 @@ export function Accordion({ items }: AccordionProps) {
                   transition={{ duration: 0.3, ease: "easeInOut" }}
                   className="overflow-hidden"
                 >
-                  <p className="pb-5 text-[#888888] leading-relaxed text-sm">
+                  <p className="px-6 pb-6 text-[#aaaaaa] leading-relaxed text-sm">
                     {item.answer}
                   </p>
                 </motion.div>

@@ -35,7 +35,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
         {/* Left */}
         <div className="flex flex-col gap-1">
-          <span className="font-display text-base font-bold text-white">
+          <span className="font-heading text-base font-bold text-white">
             Rankly
           </span>
           <span className="text-xs text-[#888888]">

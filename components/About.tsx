@@ -9,28 +9,29 @@ export function About() {
 
   return (
     <section id="about" className="py-32 px-6 bg-[#0a0a0a]">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
+        {/* Section label */}
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5 }}
+          className="text-xs font-medium text-[#888888] tracking-[0.2em] uppercase mb-5 text-center"
+        >
+          About
+        </motion.p>
+
         <div
           ref={ref}
-          className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center"
+          className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mt-10"
         >
           {/* Left — Text */}
           <div className="flex flex-col gap-8">
-            <motion.p
-              initial={{ opacity: 0, y: 16 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5 }}
-              className="text-xs font-medium text-[#888888] tracking-[0.2em] uppercase"
-            >
-              About
-            </motion.p>
-
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              <h2 className="font-display text-4xl sm:text-5xl font-bold text-white relative inline-block pb-2">
+              <h2 className="font-heading text-4xl sm:text-5xl font-bold text-white relative inline-block pb-2">
                 Aayush Lamichhane
                 <motion.span
                   className="absolute bottom-0 left-0 h-px bg-white block w-full origin-left"
@@ -45,7 +46,7 @@ export function About() {
               initial={{ opacity: 0, y: 16 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-[#888888] leading-relaxed text-base max-w-lg"
+              className="text-[#aaaaaa] leading-relaxed text-base max-w-lg"
             >
               I&apos;m a web developer focused on one thing: building websites
               that actually rank. I&apos;ve seen too many small businesses pay
@@ -73,7 +74,7 @@ export function About() {
             initial={{ opacity: 0, x: 24 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-[#0d0d0d] border border-white/10 overflow-hidden"
+            className="bg-[#0d0d0d] border border-white/10 rounded-xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.5)]"
           >
             {/* Terminal titlebar */}
             <div className="flex items-center gap-2 px-5 py-3.5 border-b border-white/10 bg-[#111111]">
@@ -105,9 +106,9 @@ export function About() {
                     <span className="text-[#666666] text-xs w-28 shrink-0">
                       {metric.label}
                     </span>
-                    <div className="flex-1 h-1.5 bg-white/5 rounded-none overflow-hidden">
+                    <div className="flex-1 h-1.5 bg-white/5 rounded-full overflow-hidden">
                       <div
-                        className="h-full bg-gradient-to-r from-emerald-500 to-green-400"
+                        className="h-full bg-gradient-to-r from-emerald-500 to-green-400 rounded-full"
                         style={{ width: `${metric.score}%` }}
                       />
                     </div>

@@ -29,19 +29,19 @@ export function Services() {
 
   return (
     <section id="services" className="py-32 px-6 bg-[#111111] border-y border-[#1f1f1f]">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="mb-16"
+          className="mb-16 text-center"
           ref={ref}
         >
-          <p className="text-xs font-medium text-[#888888] tracking-[0.2em] uppercase mb-4">
+          <p className="text-xs font-medium text-[#888888] tracking-[0.2em] uppercase mb-5">
             Services
           </p>
-          <h2 className="font-display text-4xl sm:text-5xl font-bold text-white">
+          <h2 className="font-heading text-4xl sm:text-5xl font-bold text-white">
             What&apos;s included
           </h2>
         </motion.div>
@@ -51,7 +51,7 @@ export function Services() {
           variants={staggerContainer}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6"
+          className="grid grid-cols-1 md:grid-cols-3 gap-8"
         >
           {services.map((service, i) => {
             const Icon = service.icon;
@@ -61,16 +61,16 @@ export function Services() {
                 variants={fadeUp}
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
-                className="bg-[#0a0a0a] border border-white/10 p-8 flex flex-col gap-6 group hover:border-white/20 hover:shadow-[0_20px_50px_rgba(255,255,255,0.01)] transition-all duration-300"
+                className="bg-[#0a0a0a] border border-white/10 rounded-xl p-8 sm:p-10 flex flex-col gap-6 group hover:border-white/20 hover:shadow-[0_20px_50px_rgba(255,255,255,0.01)] transition-all duration-300"
               >
-                <div className="w-12 h-12 border border-white/15 flex items-center justify-center group-hover:border-white/30 transition-colors duration-300 shrink-0">
+                <div className="w-12 h-12 border border-white/15 rounded-lg flex items-center justify-center group-hover:border-white/30 transition-colors duration-300 shrink-0">
                   <Icon size={20} className="text-white group-hover:scale-110 transition-transform duration-300" />
                 </div>
                 <div className="flex flex-col gap-3">
-                  <h3 className="font-display text-lg font-bold text-white">
+                  <h3 className="font-heading text-lg font-bold text-white">
                     {service.title}
                   </h3>
-                  <p className="text-sm text-[#888888] leading-relaxed">
+                  <p className="text-sm text-[#aaaaaa] leading-relaxed">
                     {service.body}
                   </p>
                 </div>
