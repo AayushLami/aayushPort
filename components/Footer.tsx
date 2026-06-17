@@ -44,39 +44,43 @@ export function Footer() {
         </div>
 
         {/* Right */}
-        <div className="flex items-center gap-6">
+        <div className="flex flex-wrap items-center gap-x-8 gap-y-4">
           <a
             href="tel:9083386832"
-            className="text-[#888888] hover:text-white transition-colors"
+            className="text-sm text-[#888888] hover:text-white transition-colors flex items-center gap-2"
             aria-label="Call Aayush"
           >
-            <Phone size={16} />
+            <Phone size={14} />
+            <span>908-338-6832</span>
           </a>
           <a
             href="mailto:aayush@rankly.dev"
-            className="text-[#888888] hover:text-white transition-colors"
+            className="text-sm text-[#888888] hover:text-white transition-colors flex items-center gap-2"
             aria-label="Email Aayush"
           >
-            <Mail size={16} />
+            <Mail size={14} />
+            <span>aayush@rankly.dev</span>
           </a>
-          <a
-            href="https://linkedin.com/in/aayushlamichhane"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[#888888] hover:text-white transition-colors"
-            aria-label="LinkedIn"
-          >
-            <LinkedInIcon />
-          </a>
-          <a
-            href="https://github.com/aayushlamichhane"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[#888888] hover:text-white transition-colors"
-            aria-label="GitHub"
-          >
-            <GitHubIcon />
-          </a>
+          <div className="flex items-center gap-6">
+            <a
+              href="https://linkedin.com/in/aayushlamichhane"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#888888] hover:text-white transition-colors"
+              aria-label="LinkedIn"
+            >
+              <LinkedInIcon />
+            </a>
+            <a
+              href="https://github.com/aayushlamichhane"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#888888] hover:text-white transition-colors"
+              aria-label="GitHub"
+            >
+              <GitHubIcon />
+            </a>
+          </div>
         </div>
       </div>
     </footer>
