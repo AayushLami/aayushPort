@@ -1,11 +1,20 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
-export async function POST(request: Request) {
-  try {
-    // Initialize inside handler so it reads env at runtime, not build time
-    const resend = new Resend(process.env.RESEND_API_KEY);
+export const dynamic = "force-dynamic";
 
+export async function POST(request: Request) {
+  // Guard: ensure API key is present before instantiating Resend
+  if (!process.env.RESEND_API_KEY) {
+    return NextResponse.json(
+      { error: "Email service not configured" },
+      { status: 500 }
+    );
+  }
+
+  const resend = new Resend(process.env.RESEND_API_KEY);
+
+  try {
     const { name, email, phone, website } = await request.json();
 
     // Validate inputs
@@ -24,11 +33,9 @@ export async function POST(request: Request) {
     }
 
     // Send email using Resend
-    // By default, Resend's free tier allows sending to your own email address
-    // (the one used to sign up for Resend) using onboarding@resend.dev.
     const { data, error } = await resend.emails.send({
       from: "Rankly Demos <onboarding@resend.dev>",
-      to: "aayush@rankly.dev", // The notifications will be sent to the owner
+      to: "aayush@rankly.dev",
       subject: `New Rankly Demo Request from ${name}`,
       html: `
         <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #eee;">
@@ -61,7 +68,8 @@ export async function POST(request: Request) {
     }
 
     return NextResponse.json({ success: true, data });
-  } catch (err: any) {
-    return NextResponse.json({ error: err.message }, { status: 500 });
+  } catch (err: unknown) {
+    const message = err instanceof Error ? err.message : "Unknown error";
+    return NextResponse.json({ error: message }, { status: 500 });
   }
 }
