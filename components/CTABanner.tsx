@@ -63,19 +63,34 @@ export function CTABanner() {
       return;
     }
 
-    // Success state
-    setSubmitted(true);
-
-    // Reset after a delay so they see the success message
-    setTimeout(() => {
-      setIsOpen(false);
-      setSubmitted(false);
-      setName("");
-      setEmail("");
-      setPhone("");
-      setWebsite("");
-      setErrors({});
-    }, 3500);
+    // Post data to Next.js API route
+    fetch("/api/demo", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name, email, phone, website }),
+    })
+      .then(async (res) => {
+        const data = await res.json();
+        if (res.ok && data.success) {
+          setSubmitted(true);
+          setTimeout(() => {
+            setIsOpen(false);
+            setSubmitted(false);
+            setName("");
+            setEmail("");
+            setPhone("");
+            setWebsite("");
+            setErrors({});
+          }, 3500);
+        } else {
+          setErrors({ email: data.error || "Failed to submit request." });
+        }
+      })
+      .catch(() => {
+        setErrors({ email: "An error occurred. Please try again later." });
+      });
   };
 
   return (
