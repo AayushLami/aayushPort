@@ -131,7 +131,7 @@ export function CTABanner() {
               onClick={() => setIsOpen(true)}
               variant="primary"
               size="lg"
-              className="min-w-[200px]"
+              className="min-w-[200px] bg-white text-[#111111] border-white hover:bg-[#f3f4f6] hover:border-[#f3f4f6]"
             >
               Book a Demo
             </Button>
@@ -139,7 +139,7 @@ export function CTABanner() {
               href="tel:9083386832"
               variant="secondary"
               size="lg"
-              className="min-w-[200px]"
+              className="min-w-[200px] bg-transparent text-white border-white hover:bg-white hover:text-[#111111]"
             >
               Call 908-338-6832
             </Button>

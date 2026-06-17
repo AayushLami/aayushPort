@@ -23,8 +23,8 @@ html {
 }
 
 body {
-  background-color: #ffffff;
-  color: #111111;
+  background-color: #ffffff !important;
+  color: #111111 !important;
 }
 
 /* ─── Focus rings ───────────────────────────────────────────────── */

@@ -4,8 +4,8 @@ import { Services } from "@/components/Services";
 import { Pricing } from "@/components/Pricing";
 import { Process } from "@/components/Process";
 import { About } from "@/components/About";
-import { FAQ } from "@/components/FAQ";
 import { CTABanner } from "@/components/CTABanner";
+import { FinalCTA } from "@/components/FinalCTA";
 import { Footer } from "@/components/Footer";
 
 export default function Home() {
@@ -17,8 +17,8 @@ export default function Home() {
       <Pricing />
       <Process />
       <About />
-      <FAQ />
       <CTABanner />
+      <FinalCTA />
       <Footer />
     </main>
   );

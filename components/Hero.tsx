@@ -113,10 +113,20 @@ export function Hero() {
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
               className="flex flex-col sm:flex-row items-center gap-4"
             >
-              <Button href="#pricing" variant="primary" size="lg">
+              <Button
+                href="#pricing"
+                variant="primary"
+                size="lg"
+                className="bg-white text-[#111111] border-white hover:bg-[#f3f4f6] hover:border-[#f3f4f6]"
+              >
                 See Pricing
               </Button>
-              <Button href="#about" variant="secondary" size="lg">
+              <Button
+                href="#about"
+                variant="secondary"
+                size="lg"
+                className="bg-transparent text-white border-white hover:bg-white hover:text-[#111111]"
+              >
                 About Me
               </Button>
             </motion.div>
