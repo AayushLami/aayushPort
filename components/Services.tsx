@@ -43,8 +43,8 @@ export function Services() {
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
-    <section id="services" className="py-32 px-6 bg-white flex flex-col items-center text-center">
-      <div className="max-w-6xl mx-auto flex flex-col items-center text-center">
+    <section id="services" className="py-[120px] px-6 bg-white flex flex-col items-center text-center">
+      <div className="w-full max-w-[1100px] mx-auto flex flex-col items-center text-center">
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}

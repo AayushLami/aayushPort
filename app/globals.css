@@ -26,6 +26,7 @@ html {
 body {
   background-color: #ffffff !important;
   color: #111111 !important;
+  line-height: 1.7 !important;
 }
 
 /* ─── Focus rings ───────────────────────────────────────────────── */
@@ -44,6 +45,12 @@ body {
 @keyframes drift {
   0% { background-position: 0 0; }
   100% { background-position: 32px 32px; }
+}
+
+/* ─── Marquee animation ─────────────────────────────────────────── */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
 }
 
 /* ─── Scrollbar styling ─────────────────────────────────────────── */

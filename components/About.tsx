@@ -16,8 +16,8 @@ export function About() {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
-    <section id="about" className="py-32 px-6 bg-white border-y border-[#e5e5e5] flex flex-col items-center text-center">
-      <div className="max-w-6xl mx-auto text-center flex flex-col items-center">
+    <section id="about" className="py-[120px] px-6 bg-white border-y border-[#e5e5e5] flex flex-col items-center text-center">
+      <div className="w-full max-w-[1100px] mx-auto text-center flex flex-col items-center">
         {/* Section label */}
         <motion.p
           initial={{ opacity: 0, y: 16 }}

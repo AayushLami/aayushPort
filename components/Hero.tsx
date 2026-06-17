@@ -44,7 +44,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col items-center justify-center text-center overflow-hidden pt-16 bg-white"
+      className="relative flex flex-col items-center justify-center text-center overflow-hidden pt-36 pb-[120px] bg-white"
       aria-label="Hero"
     >
       {/* Subtle dot grid — light on white */}
@@ -66,7 +66,7 @@ export function Hero() {
         }}
       />
 
-      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center flex flex-col items-center gap-8">
+      <div className="relative z-10 w-full max-w-[1100px] mx-auto px-6 text-center flex flex-col items-center gap-8">
         {/* Eyebrow */}
         <div className="flex items-center justify-center gap-3">
           <span className="w-8 h-px bg-gray-300" />

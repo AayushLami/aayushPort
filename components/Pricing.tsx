@@ -12,8 +12,8 @@ export function Pricing() {
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
-    <section id="pricing" className="py-32 px-6 bg-white flex flex-col items-center text-center">
-      <div className="max-w-6xl mx-auto flex flex-col items-center text-center">
+    <section id="pricing" className="py-[120px] px-6 bg-white flex flex-col items-center text-center">
+      <div className="w-full max-w-[1100px] mx-auto flex flex-col items-center text-center">
         {/* Header */}
         <motion.div
           ref={ref}
