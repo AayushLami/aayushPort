@@ -8,7 +8,7 @@ export function FinalCTA() {
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   return (
-    <section className="py-32 px-6 bg-[#f5f5f5]">
+    <section className="py-32 px-6 bg-[#f5f5f5] flex flex-col items-center text-center">
       <div
         ref={ref}
         className="max-w-3xl mx-auto flex flex-col items-center text-center gap-8"

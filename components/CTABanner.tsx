@@ -96,7 +96,7 @@ export function CTABanner() {
   return (
     <section
       id="contact"
-      className="py-32 px-6 bg-[#111111]"
+      className="py-32 px-6 bg-[#111111] flex flex-col items-center text-center"
     >
       <div
         ref={ref}
@@ -126,20 +126,20 @@ export function CTABanner() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="flex flex-col items-center gap-4"
         >
-          <div className="flex flex-col sm:flex-row items-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button
               onClick={() => setIsOpen(true)}
-              variant="primary"
+              variant="ctaPrimary"
               size="lg"
-              className="min-w-[200px] bg-white text-[#111111] border-white hover:bg-[#f3f4f6] hover:border-[#f3f4f6]"
+              className="min-w-[200px]"
             >
               Book a Demo
             </Button>
             <Button
               href="tel:9083386832"
-              variant="secondary"
+              variant="ctaSecondary"
               size="lg"
-              className="min-w-[200px] bg-transparent text-white border-white hover:bg-white hover:text-[#111111]"
+              className="min-w-[200px]"
             >
               Call 908-338-6832
             </Button>

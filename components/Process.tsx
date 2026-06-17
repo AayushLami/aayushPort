@@ -32,8 +32,8 @@ export function Process() {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
-    <section id="process" className="py-32 px-6 bg-white border-y border-[#e5e5e5]">
-      <div className="max-w-6xl mx-auto">
+    <section id="process" className="py-32 px-6 bg-white border-y border-[#e5e5e5] flex flex-col items-center text-center">
+      <div className="max-w-6xl mx-auto flex flex-col items-center text-center">
         {/* Header */}
         <motion.div
           ref={ref}

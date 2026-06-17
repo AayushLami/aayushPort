@@ -31,10 +31,10 @@ function LinkedInIcon() {
 
 export function Footer() {
   return (
-    <footer className="bg-[#111111] border-t border-white/10 py-10 px-6">
-      <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+    <footer className="bg-[#111111] border-t border-white/10 py-10 px-6 flex flex-col items-center text-center">
+      <div className="max-w-7xl mx-auto flex flex-col items-center justify-center gap-6">
         {/* Left */}
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col items-center gap-1 text-center">
           <span className="font-heading text-base font-bold text-white">
             Rankly
           </span>
@@ -44,7 +44,7 @@ export function Footer() {
         </div>
 
         {/* Right */}
-        <div className="flex flex-wrap items-center gap-x-8 gap-y-4">
+        <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
           <a
             href="tel:9083386832"
             className="text-sm text-[#9ca3af] hover:text-white transition-colors flex items-center gap-2"

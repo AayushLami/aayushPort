@@ -12,15 +12,15 @@ export function Pricing() {
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
-    <section id="pricing" className="py-32 px-6 bg-white">
-      <div className="max-w-6xl mx-auto">
+    <section id="pricing" className="py-32 px-6 bg-white flex flex-col items-center text-center">
+      <div className="max-w-6xl mx-auto flex flex-col items-center text-center">
         {/* Header */}
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="mb-16 text-center"
+          className="mb-16 text-center flex flex-col items-center"
         >
           <p className="text-xs font-semibold text-[#6b7280] tracking-[0.2em] uppercase mb-4">
             Pricing
@@ -38,7 +38,7 @@ export function Pricing() {
           variants={staggerContainer}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full"
         >
           {pricingPlans.map((plan) => (
             <motion.div
@@ -64,9 +64,9 @@ export function Pricing() {
                 </div>
               )}
 
-              <div className="flex flex-col gap-8 p-8 sm:p-10 flex-1">
+              <div className="flex flex-col items-center text-center gap-8 p-8 sm:p-10 flex-1">
                 {/* Plan name + best for */}
-                <div className="text-center">
+                <div className="text-center flex flex-col items-center">
                   <h3 className={`font-heading text-lg font-bold mb-2 ${plan.popular ? "text-white" : "text-[#111111]"}`}>
                     {plan.name}
                   </h3>
@@ -89,13 +89,13 @@ export function Pricing() {
                 <div className={`w-full h-px ${plan.popular ? "bg-white/10" : "bg-[#e5e5e5]"}`} />
 
                 {/* Features */}
-                <ul className="flex flex-col gap-4 flex-1">
+                <ul className="flex flex-col items-center text-center gap-4 flex-1">
                   {plan.features.map((feature, i) => (
-                    <li key={i} className="flex items-start gap-3">
+                    <li key={i} className="flex items-center gap-3">
                       <Check
-                        size={14}
-                        className={`mt-0.5 shrink-0 ${plan.popular ? "text-white" : "text-[#111111]"}`}
-                        strokeWidth={3}
+                         size={14}
+                         className={`shrink-0 ${plan.popular ? "text-white" : "text-[#111111]"}`}
+                         strokeWidth={3}
                       />
                       <span className={`text-sm leading-snug ${plan.popular ? "text-[#d1d5db]" : "text-[#374151]"}`}>
                         {feature}
@@ -118,13 +118,9 @@ export function Pricing() {
                 {/* CTA */}
                 <Button
                   href="#contact"
-                  variant={plan.popular ? "primary" : "secondary"}
+                  variant={plan.popular ? "pricingPopular" : "secondary"}
                   size="md"
-                  className={`w-full justify-center rounded-lg ${
-                    plan.popular
-                      ? "bg-white text-black border-white hover:bg-transparent hover:text-white"
-                      : "border-[#111111] text-[#111111] hover:bg-[#111111] hover:text-white"
-                  }`}
+                  className="w-full justify-center rounded-lg"
                 >
                   {plan.cta}
                 </Button>

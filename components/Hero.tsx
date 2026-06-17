@@ -44,46 +44,45 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 bg-[#0a0a0a]"
+      className="relative min-h-screen flex flex-col items-center justify-center text-center overflow-hidden pt-16 bg-white"
       aria-label="Hero"
     >
-      {/* Dot grid background */}
+      {/* Subtle dot grid — light on white */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           backgroundImage:
-            "radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px)",
+            "radial-gradient(circle, rgba(0,0,0,0.06) 1px, transparent 1px)",
           backgroundSize: "32px 32px",
           animation: "drift 20s linear infinite",
         }}
       />
-      {/* Gradient overlay */}
+      {/* Fade edges */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 70% 60% at 50% 50%, transparent 30%, #0a0a0a 100%)",
+            "radial-gradient(ellipse 70% 60% at 50% 50%, transparent 30%, #ffffff 100%)",
         }}
       />
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center flex flex-col items-center gap-8">
         {/* Eyebrow */}
-        <div className="flex items-center gap-3">
-          <span className="w-8 h-px bg-white/40" />
-          <span className="text-xs font-semibold text-[#9ca3af] tracking-[0.2em] uppercase">
+        <div className="flex items-center justify-center gap-3">
+          <span className="w-8 h-px bg-gray-300" />
+          <span className="text-xs font-semibold text-gray-500 tracking-[0.2em] uppercase">
             Rank Higher. Get Found. Grow.
           </span>
-          <span className="w-8 h-px bg-white/40" />
+          <span className="w-8 h-px bg-gray-300" />
         </div>
 
         {/* Typewriter headline */}
-        <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] tracking-tight min-h-[3.3em] sm:min-h-[2.2em] md:min-h-[2.2em]">
+        <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#111111] leading-[1.1] tracking-tight min-h-[3.3em] sm:min-h-[2.2em] md:min-h-[2.2em]">
           {displayed}
           <span
-            className="inline-block w-[3px] h-[0.85em] bg-white ml-1 align-middle"
+            className="inline-block w-[3px] h-[0.85em] bg-[#111111] ml-1 align-middle"
             style={{
               animation: typingDone ? "blink 1s step-end infinite" : "none",
-              opacity: typingDone ? 1 : 1,
             }}
           />
         </h1>
@@ -95,38 +94,28 @@ export function Hero() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              className="text-base sm:text-lg text-[#9ca3af] max-w-2xl leading-relaxed"
+              className="text-base sm:text-lg text-gray-500 max-w-2xl leading-relaxed"
             >
               I build fast, SEO-optimized websites that rank on Google and turn
               visitors into customers.{" "}
-              <span className="text-white/60">No templates. No fluff.</span>
+              <span className="text-gray-400">No templates. No fluff.</span>
             </motion.p>
           )}
         </AnimatePresence>
 
-        {/* CTA Buttons */}
+        {/* CTA Buttons — using Button component */}
         <AnimatePresence>
           {typingDone && (
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
-              className="flex flex-col sm:flex-row items-center gap-4"
+              className="flex flex-col sm:flex-row items-center justify-center gap-4"
             >
-              <Button
-                href="#pricing"
-                variant="primary"
-                size="lg"
-                className="bg-white text-[#111111] border-white hover:bg-[#f3f4f6] hover:border-[#f3f4f6]"
-              >
+              <Button href="#pricing" variant="primary" size="lg">
                 See Pricing
               </Button>
-              <Button
-                href="#about"
-                variant="secondary"
-                size="lg"
-                className="bg-transparent text-white border-white hover:bg-white hover:text-[#111111]"
-              >
+              <Button href="#about" variant="secondary" size="lg">
                 About Me
               </Button>
             </motion.div>
@@ -140,14 +129,14 @@ export function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-wrap items-center justify-center gap-8 mt-2 border-t border-white/10 pt-8 w-full max-w-md"
+              className="flex flex-wrap items-center justify-center gap-8 mt-2 border-t border-gray-200 pt-8 w-full max-w-md"
             >
               {stats.map((stat, i) => (
                 <div key={i} className="flex flex-col items-center gap-0.5">
-                  <span className="font-heading text-xl font-bold text-white">
+                  <span className="font-heading text-xl font-bold text-[#111111]">
                     {stat.value}
                   </span>
-                  <span className="text-xs text-[#9ca3af] tracking-wide">
+                  <span className="text-xs text-gray-500 tracking-wide">
                     {stat.label}
                   </span>
                 </div>
@@ -159,10 +148,10 @@ export function Hero() {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-30">
-        <span className="text-[10px] text-white tracking-widest uppercase">
+        <span className="text-[10px] text-gray-400 tracking-widest uppercase">
           Scroll
         </span>
-        <div className="w-px h-8 bg-gradient-to-b from-white to-transparent" />
+        <div className="w-px h-8 bg-gradient-to-b from-gray-400 to-transparent" />
       </div>
     </section>
   );

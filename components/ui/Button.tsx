@@ -3,7 +3,7 @@
 import React from "react";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "secondary";
+  variant?: "primary" | "secondary" | "ctaPrimary" | "ctaSecondary" | "pricingPopular";
   size?: "sm" | "md" | "lg";
   asChild?: boolean;
   href?: string;
@@ -33,6 +33,15 @@ export function Button({
     // White bg, black border + text — secondary action
     secondary:
       "bg-white text-[#111111] border border-[#111111] hover:bg-[#111111] hover:text-white",
+    // White bg, black text, white border (CTA Book a Demo)
+    ctaPrimary:
+      "bg-white text-[#111111] border border-white hover:bg-gray-100",
+    // Black border, white text (CTA Call)
+    ctaSecondary:
+      "bg-transparent text-white border border-[#111111] hover:bg-[#111111] transition-colors duration-200",
+    // White bg, black text, white border, transparent on hover with white text (Pricing Popular)
+    pricingPopular:
+      "bg-white text-black border border-white hover:bg-transparent hover:text-white",
   };
 
   const classes = `${base} ${sizes[size]} ${variants[variant]} ${className}`;

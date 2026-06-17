@@ -16,8 +16,8 @@ export function About() {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
-    <section id="about" className="py-32 px-6 bg-white border-y border-[#e5e5e5]">
-      <div className="max-w-6xl mx-auto text-center">
+    <section id="about" className="py-32 px-6 bg-white border-y border-[#e5e5e5] flex flex-col items-center text-center">
+      <div className="max-w-6xl mx-auto text-center flex flex-col items-center">
         {/* Section label */}
         <motion.p
           initial={{ opacity: 0, y: 16 }}
@@ -39,10 +39,10 @@ export function About() {
 
         <div
           ref={ref}
-          className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start text-left"
+          className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center text-center w-full"
         >
           {/* Left — Text */}
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col items-center text-center gap-8">
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -60,10 +60,10 @@ export function About() {
               initial={{ opacity: 0, y: 16 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="flex flex-col gap-3"
+              className="flex flex-col items-center gap-3 w-full"
             >
               {bullets.map((b, i) => (
-                <li key={i} className="flex items-center gap-3">
+                <li key={i} className="flex items-center gap-3 justify-center">
                   <CheckCircle2 size={16} className="text-[#111111] shrink-0" strokeWidth={2.5} />
                   <span className="text-sm text-[#374151]">{b}</span>
                 </li>
@@ -89,21 +89,21 @@ export function About() {
             initial={{ opacity: 0, x: 24 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex flex-col gap-5"
+            className="flex flex-col gap-5 w-full"
           >
             {/* Profile Card */}
-            <div className="bg-white border border-[#e5e5e5] rounded-xl p-8 flex flex-col gap-6">
+            <div className="bg-white border border-[#e5e5e5] rounded-xl p-8 flex flex-col items-center text-center gap-6">
               {/* Avatar + name */}
-              <div className="flex items-center gap-5">
+              <div className="flex flex-col sm:flex-row items-center gap-5 justify-center">
                 <div className="w-16 h-16 rounded-full bg-[#111111] flex items-center justify-center shrink-0">
                   <span className="font-heading text-xl font-bold text-white">AL</span>
                 </div>
-                <div>
-                  <h3 className="font-heading text-xl font-bold text-[#111111]">
+                <div className="text-center sm:text-left">
+                  <h3 className="font-heading text-xl font-bold text-[#111111] text-center sm:text-left">
                     Aayush Lamichhane
                   </h3>
-                  <p className="text-sm text-[#6b7280] mt-0.5">Founder, Rankly</p>
-                  <div className="flex items-center gap-1.5 mt-1.5">
+                  <p className="text-sm text-[#6b7280] mt-0.5 text-center sm:text-left">Founder, Rankly</p>
+                  <div className="flex items-center justify-center sm:justify-start gap-1.5 mt-1.5">
                     <MapPin size={12} className="text-[#9ca3af]" />
                     <span className="text-xs text-[#9ca3af]">NJ · Est. 2026</span>
                   </div>
@@ -114,7 +114,7 @@ export function About() {
               <div className="w-full h-px bg-[#e5e5e5]" />
 
               {/* Stat boxes */}
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-3 gap-4 w-full">
                 {[
                   { value: "10+", label: "Sites Built" },
                   { value: "95+", label: "PageSpeed" },
@@ -136,12 +136,12 @@ export function About() {
             </div>
 
             {/* Quote card */}
-            <div className="bg-[#111111] rounded-xl p-6">
-              <p className="text-sm text-[#d1d5db] leading-relaxed italic">
+            <div className="bg-[#111111] rounded-xl p-6 flex flex-col items-center text-center">
+              <p className="text-sm text-[#d1d5db] leading-relaxed italic text-center">
                 &ldquo;Every site I build is fast, technically sound, and structured
                 for search from the ground up. No fluff, no filler — just results.&rdquo;
               </p>
-              <p className="text-xs text-[#6b7280] mt-3">— Aayush Lamichhane</p>
+              <p className="text-xs text-[#6b7280] mt-3 text-center">— Aayush Lamichhane</p>
             </div>
           </motion.div>
         </div>
