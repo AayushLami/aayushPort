@@ -44,7 +44,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex flex-col items-center justify-center text-center overflow-hidden pt-[200px] pb-[160px] bg-white"
+      className="relative min-h-screen flex flex-col items-center justify-center text-center overflow-hidden bg-white"
       aria-label="Hero"
     >
       {/* Subtle dot grid — light on white */}
@@ -129,7 +129,7 @@ export function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-wrap items-center justify-center gap-8 mt-2 border-t border-gray-200 pt-8 w-full max-w-md"
+              className="flex flex-wrap items-center justify-center gap-8 mt-[60px] border-t border-gray-200 pt-8 w-full max-w-md"
             >
               {stats.map((stat, i) => (
                 <div key={i} className="flex flex-col items-center gap-0.5">

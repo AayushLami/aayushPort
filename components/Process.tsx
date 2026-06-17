@@ -32,7 +32,7 @@ export function Process() {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
-    <section id="process" className="pt-[160px] pb-[160px] px-6 bg-white border-y border-[#e5e5e5] flex flex-col items-center text-center">
+    <section id="process" className="min-h-screen px-6 bg-white border-y border-[#e5e5e5] flex flex-col items-center justify-center text-center">
       <div className="w-full max-w-[1100px] mx-auto flex flex-col items-center text-center">
         {/* Header */}
         <motion.div
@@ -51,7 +51,7 @@ export function Process() {
         </motion.div>
 
         {/* Steps */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[48px] w-full">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[40px] w-full">
           {steps.map((step, i) => {
             const Icon = step.icon;
             return (

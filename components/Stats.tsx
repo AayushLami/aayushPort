@@ -17,7 +17,7 @@ export function Stats() {
     <section className="my-[80px] px-6 bg-white flex flex-col items-center text-center">
       <div
         ref={ref}
-        className="w-full max-w-[1100px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-[48px]"
+        className="w-full max-w-[1100px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-[40px]"
       >
         {stats.map((stat, i) => (
           <motion.div

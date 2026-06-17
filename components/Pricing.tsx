@@ -12,7 +12,7 @@ export function Pricing() {
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
-    <section id="pricing" className="pt-[160px] pb-[160px] px-6 bg-white flex flex-col items-center text-center">
+    <section id="pricing" className="min-h-screen px-6 bg-white flex flex-col items-center justify-center text-center">
       <div className="w-full max-w-[1100px] mx-auto flex flex-col items-center text-center">
         {/* Header */}
         <motion.div
@@ -38,7 +38,7 @@ export function Pricing() {
           variants={staggerContainer}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-3 gap-[48px] w-full"
+          className="grid grid-cols-1 md:grid-cols-3 gap-[40px] w-full"
         >
           {pricingPlans.map((plan) => (
             <motion.div

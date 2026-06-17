@@ -43,7 +43,7 @@ export function Services() {
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
-    <section id="services" className="pt-[160px] pb-[160px] px-6 bg-white flex flex-col items-center text-center">
+    <section id="services" className="min-h-screen px-6 bg-white flex flex-col items-center justify-center text-center">
       <div className="w-full max-w-[1100px] mx-auto flex flex-col items-center text-center">
         {/* Section header */}
         <motion.div
@@ -66,7 +66,7 @@ export function Services() {
           variants={staggerContainer}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[48px] w-full"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[40px] w-full"
         >
           {services.map((service, i) => {
             const Icon = service.icon;
