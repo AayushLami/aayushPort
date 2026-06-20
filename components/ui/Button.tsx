@@ -17,34 +17,30 @@ export function Button({
   href,
   ...props
 }: ButtonProps) {
+  // Base classes for site-wide button specification:
+  // fully rounded pill shape (100px), px-28 py-14 padding, font-weight 600, font-size 15px
   const base =
-    "inline-flex items-center justify-center font-semibold tracking-tight transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#111] focus-visible:ring-offset-2 cursor-pointer select-none rounded-lg";
-
-  const sizes = {
-    sm: "px-4 py-2 text-sm",
-    md: "px-6 py-3 text-sm",
-    lg: "px-8 py-4 text-base",
-  };
+    "inline-flex items-center justify-center font-[600] text-[15px] px-[28px] py-[14px] rounded-full tracking-tight transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#111] focus-visible:ring-offset-2 cursor-pointer select-none";
 
   const variants = {
-    // Black bg, white text — primary action
+    // Primary button: black bg, white text
     primary:
-      "bg-[#111111] text-white border border-[#111111] hover:bg-black hover:border-black",
-    // White bg, black border + text — secondary action
+      "bg-black text-white border border-black hover:bg-neutral-800 hover:border-neutral-800",
+    // Secondary button: white bg, 1px solid #d4d4d4, black text
     secondary:
-      "bg-white text-[#111111] border border-[#111111] hover:bg-[#111111] hover:text-white",
-    // White bg, black text, white border (CTA Book a Demo)
+      "bg-white text-black border border-[#d4d4d4] hover:bg-neutral-50",
+    // White bg, black text, white border
     ctaPrimary:
-      "bg-white text-[#111111] border border-white hover:bg-gray-100",
-    // Black border, white text (CTA Call)
+      "bg-white text-black border border-white hover:bg-neutral-100",
+    // Transparent bg, white text, white border
     ctaSecondary:
-      "bg-transparent text-white border border-[#111111] hover:bg-[#111111] transition-colors duration-200",
-    // White bg, black text, white border, transparent on hover with white text (Pricing Popular)
+      "bg-transparent text-white border border-white hover:bg-white hover:text-black",
+    // White bg, black text, white border, hover transparent
     pricingPopular:
       "bg-white text-black border border-white hover:bg-transparent hover:text-white",
   };
 
-  const classes = `${base} ${sizes[size]} ${variants[variant]} ${className}`;
+  const classes = `${base} ${variants[variant]} ${className}`;
 
   if (href) {
     return (

@@ -67,7 +67,7 @@ export function Navbar() {
         {/* CTA */}
         <button
           onClick={triggerContactModal}
-          className="hidden md:inline-flex items-center justify-center font-semibold text-sm tracking-tight text-white bg-black hover:bg-neutral-800 transition-colors px-[20px] py-[10px] rounded-[8px] cursor-pointer"
+          className="hidden md:inline-flex items-center justify-center font-semibold text-sm tracking-tight text-white bg-black hover:bg-neutral-800 transition-colors px-[22px] py-[10px] rounded-full cursor-pointer"
         >
           Get Started
         </button>
@@ -112,7 +112,7 @@ export function Navbar() {
               triggerContactModal(e);
               document.getElementById("mobile-menu")?.classList.add("hidden");
             }}
-            className="w-full inline-flex items-center justify-center font-semibold text-sm tracking-tight text-white bg-black hover:bg-neutral-800 transition-colors py-3 rounded-[8px] cursor-pointer"
+            className="w-full inline-flex items-center justify-center font-semibold text-sm tracking-tight text-white bg-black hover:bg-neutral-800 transition-colors py-[10px] px-[22px] rounded-full cursor-pointer"
           >
             Get Started
           </button>

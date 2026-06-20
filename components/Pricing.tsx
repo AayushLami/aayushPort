@@ -35,7 +35,7 @@ export function Pricing() {
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="mb-[80px] text-left w-full flex flex-col items-start"
+          className="mb-[56px] text-left w-full flex flex-col items-start"
         >
           <p className="text-[12px] tracking-[0.12em] text-[#999999] font-medium uppercase mb-[24px]">
             Pricing
@@ -131,11 +131,11 @@ export function Pricing() {
                   ))}
                 </ul>
 
-                {/* CTA Button - full width, black/white, border-radius 8px */}
+                {/* CTA Button */}
                 <button
                   onClick={triggerContactModal}
                   className={`
-                    w-full inline-flex items-center justify-center font-semibold text-sm tracking-tight transition-all duration-200 px-6 py-3.5 rounded-[8px] cursor-pointer
+                    w-full inline-flex items-center justify-center font-[600] text-[15px] tracking-tight transition-all duration-200 px-[28px] py-[14px] rounded-full cursor-pointer
                     ${
                       plan.popular
                         ? "bg-white text-black border border-white hover:bg-neutral-100"

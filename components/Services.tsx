@@ -62,7 +62,7 @@ export function Services() {
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="mb-[80px] text-left"
+          className="mb-[60px] text-left"
           ref={ref}
         >
           <p className="text-[12px] tracking-[0.12em] text-[#999999] font-medium uppercase mb-[24px]">
@@ -72,7 +72,7 @@ export function Services() {
             className="font-heading font-extrabold text-[#111111] tracking-[-0.03em] leading-[1.1]"
             style={{ fontSize: "clamp(36px, 5vw, 64px)" }}
           >
-            Built to rank,<br />then not just look good.
+            Built to rank,<br />not just look good.
           </h2>
         </motion.div>
 
@@ -81,7 +81,7 @@ export function Services() {
           variants={staggerContainer}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[40px] w-full"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[20px] w-full"
         >
           {services.map((service, i) => {
             const Icon = service.icon;

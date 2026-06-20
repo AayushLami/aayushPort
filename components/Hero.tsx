@@ -117,13 +117,13 @@ export function Hero() {
             >
               <button
                 onClick={triggerContactModal}
-                className="w-full sm:w-auto inline-flex items-center justify-center font-semibold text-sm tracking-tight text-white bg-black hover:bg-neutral-800 transition-colors px-[24px] py-[14px] rounded-[8px] cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center font-[600] text-[15px] tracking-tight text-white bg-black hover:bg-neutral-800 transition-colors px-[28px] py-[14px] rounded-full cursor-pointer"
               >
                 Get Started &rarr;
               </button>
               <a
                 href="#pricing"
-                className="w-full sm:w-auto inline-flex items-center justify-center font-semibold text-sm tracking-tight text-black bg-white border border-[#e0e0e0] hover:bg-gray-50 transition-colors px-[24px] py-[14px] rounded-[8px]"
+                className="w-full sm:w-auto inline-flex items-center justify-center font-[600] text-[15px] tracking-tight text-black bg-white border border-[#d4d4d4] hover:bg-neutral-50 transition-colors px-[28px] py-[14px] rounded-full"
               >
                 See Pricing
               </a>
