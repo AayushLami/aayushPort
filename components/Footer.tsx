@@ -1,6 +1,6 @@
 import { Mail, Phone } from "lucide-react";
 
-// Inline SVGs for social icons not available in this lucide version
+// Inline SVGs for social icons
 function GitHubIcon() {
   return (
     <svg
@@ -31,55 +31,82 @@ function LinkedInIcon() {
 
 export function Footer() {
   return (
-    <footer className="bg-[#111111] border-t border-white/10 py-10 px-6 flex flex-col items-center text-center">
-      <div className="max-w-7xl mx-auto flex flex-col items-center justify-center gap-6">
-        {/* Left */}
-        <div className="flex flex-col items-center gap-1 text-center">
-          <span className="font-heading text-base font-bold text-white">
+    <footer className="bg-[#0a0a0a] text-[#888888] py-16 px-6 border-t border-white/5">
+      <div className="max-w-[1100px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-left">
+        {/* Left Column: Logo & Tagline */}
+        <div className="flex flex-col gap-3">
+          <span className="font-heading text-xl font-bold text-white tracking-tight">
             Rankly
           </span>
-          <span className="text-xs text-[#6b7280]">
-            © 2025 Aayush Lamichhane
-          </span>
+          <p className="text-sm text-[#888888]">
+            Websites that get found.
+          </p>
+          <p className="text-xs text-[#555555] mt-6">
+            &copy; {new Date().getFullYear()} Aayush Lamichhane. All rights reserved.
+          </p>
         </div>
 
-        {/* Right */}
-        <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
-          <a
-            href="tel:9083386832"
-            className="text-sm text-[#9ca3af] hover:text-white transition-colors flex items-center gap-2"
-            aria-label="Call Aayush"
-          >
-            <Phone size={14} />
-            <span>908-338-6832</span>
-          </a>
-          <a
-            href="mailto:aayush@rankly.dev"
-            className="text-sm text-[#9ca3af] hover:text-white transition-colors flex items-center gap-2"
-            aria-label="Email Aayush"
-          >
-            <Mail size={14} />
-            <span>aayush@rankly.dev</span>
-          </a>
-          <div className="flex items-center gap-6">
+        {/* Center Column: Navigation Links */}
+        <div className="flex flex-col gap-3">
+          <span className="text-xs font-semibold text-white tracking-wider uppercase mb-1">
+            Navigation
+          </span>
+          <nav className="flex flex-col gap-2.5">
+            <a href="#services" className="text-sm text-[#888888] hover:text-white transition-colors w-fit">
+              Services
+            </a>
+            <a href="#pricing" className="text-sm text-[#888888] hover:text-white transition-colors w-fit">
+              Pricing
+            </a>
+            <a href="#about" className="text-sm text-[#888888] hover:text-white transition-colors w-fit">
+              About
+            </a>
+            <a href="#contact" className="text-sm text-[#888888] hover:text-white transition-colors w-fit">
+              Contact
+            </a>
+          </nav>
+        </div>
+
+        {/* Right Column: Contact Info */}
+        <div className="flex flex-col gap-3">
+          <span className="text-xs font-semibold text-white tracking-wider uppercase mb-1">
+            Contact
+          </span>
+          <div className="flex flex-col gap-2.5">
             <a
-              href="https://linkedin.com/in/aayushlamichhane"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#9ca3af] hover:text-white transition-colors"
-              aria-label="LinkedIn"
+              href="mailto:aayush@rankly.dev"
+              className="text-sm text-[#888888] hover:text-white transition-colors flex items-center gap-2 w-fit"
             >
-              <LinkedInIcon />
+              <Mail size={14} className="shrink-0" />
+              <span>aayush@rankly.dev</span>
             </a>
             <a
-              href="https://github.com/aayushlamichhane"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#9ca3af] hover:text-white transition-colors"
-              aria-label="GitHub"
+              href="tel:9083386832"
+              className="text-sm text-[#888888] hover:text-white transition-colors flex items-center gap-2 w-fit"
             >
-              <GitHubIcon />
+              <Phone size={14} className="shrink-0" />
+              <span>908-338-6832</span>
             </a>
+            <div className="flex items-center gap-4 mt-4">
+              <a
+                href="https://linkedin.com/in/aayushlamichhane"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#888888] hover:text-white transition-colors"
+                aria-label="LinkedIn"
+              >
+                <LinkedInIcon />
+              </a>
+              <a
+                href="https://github.com/aayushlamichhane"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#888888] hover:text-white transition-colors"
+                aria-label="GitHub"
+              >
+                <GitHubIcon />
+              </a>
+            </div>
           </div>
         </div>
       </div>

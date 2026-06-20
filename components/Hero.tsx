@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Button } from "@/components/ui/Button";
 
 const HEADLINE = "Your website should work as hard as you do.";
 const CHAR_INTERVAL = 60;
@@ -41,43 +40,46 @@ export function Hero() {
     return () => clearInterval(interval);
   }, []);
 
+  const triggerContactModal = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.dispatchEvent(new CustomEvent("open-contact-modal"));
+  };
+
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col items-center justify-center text-center overflow-hidden bg-white"
+      className="relative min-h-screen flex flex-col items-center justify-center text-center overflow-hidden bg-[#f5f5f5]"
       aria-label="Hero"
     >
-      {/* Subtle dot grid — light on white */}
+      {/* Subtle dot grid */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           backgroundImage:
-            "radial-gradient(circle, rgba(0,0,0,0.06) 1px, transparent 1px)",
+            "radial-gradient(circle, rgba(0,0,0,0.04) 1px, transparent 1px)",
           backgroundSize: "32px 32px",
-          animation: "drift 20s linear infinite",
-        }}
-      />
-      {/* Fade edges */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(ellipse 70% 60% at 50% 50%, transparent 30%, #ffffff 100%)",
         }}
       />
 
-      <div className="relative z-10 w-full max-w-[1100px] mx-auto px-6 text-center flex flex-col items-center gap-8">
-        {/* Eyebrow */}
-        <div className="flex items-center justify-center gap-3">
-          <span className="w-8 h-px bg-gray-300" />
-          <span className="text-xs font-semibold text-gray-500 tracking-[0.2em] uppercase">
-            Rank Higher. Get Found. Grow.
+      <div className="relative z-10 w-full max-w-[1100px] mx-auto px-6 text-center flex flex-col items-center gap-8 pt-[140px] pb-[80px]">
+        {/* Pulsing red dot pill badge */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-[#e0e0e0]"
+        >
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
           </span>
-          <span className="w-8 h-px bg-gray-300" />
-        </div>
+          <span className="text-[11px] font-semibold text-[#555555] tracking-wider uppercase">
+            2 slots open this month
+          </span>
+        </motion.div>
 
         {/* Typewriter headline */}
-        <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#111111] leading-[1.1] tracking-tight min-h-[3.3em] sm:min-h-[2.2em] md:min-h-[2.2em]">
+        <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#111111] leading-[1.1] tracking-tight min-h-[3.3em] sm:min-h-[2.2em] md:min-h-[2.2em] max-w-4xl">
           {displayed}
           <span
             className="inline-block w-[3px] h-[0.85em] bg-[#111111] ml-1 align-middle"
@@ -94,30 +96,53 @@ export function Hero() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              className="text-base sm:text-lg text-gray-500 max-w-2xl leading-relaxed"
+              className="text-[20px] text-[#666666] max-w-[520px] mx-auto leading-relaxed"
             >
               I build fast, SEO-optimized websites that rank on Google and turn
-              visitors into customers.{" "}
-              <span className="text-gray-400">No templates. No fluff.</span>
+              visitors into customers. <span className="text-gray-400">No templates. No fluff.</span>
             </motion.p>
           )}
         </AnimatePresence>
 
-        {/* CTA Buttons — using Button component */}
+        {/* CTA Buttons */}
         <AnimatePresence>
           {typingDone && (
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
-              className="flex flex-col sm:flex-row items-center justify-center gap-4"
+              className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto"
             >
-              <Button href="#pricing" variant="primary" size="lg">
+              <button
+                onClick={triggerContactModal}
+                className="w-full sm:w-auto inline-flex items-center justify-center font-semibold text-sm tracking-tight text-white bg-black hover:bg-neutral-800 transition-colors px-[24px] py-[14px] rounded-[8px] cursor-pointer"
+              >
+                Get Started &rarr;
+              </button>
+              <a
+                href="#pricing"
+                className="w-full sm:w-auto inline-flex items-center justify-center font-semibold text-sm tracking-tight text-black bg-white border border-[#e0e0e0] hover:bg-gray-50 transition-colors px-[24px] py-[14px] rounded-[8px]"
+              >
                 See Pricing
-              </Button>
-              <Button href="#about" variant="secondary" size="lg">
-                About Me
-              </Button>
+              </a>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Inline tags below buttons */}
+        <AnimatePresence>
+          {typingDone && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="text-[13px] text-[#888888] font-medium flex items-center justify-center gap-2"
+            >
+              <span>Fast Delivery</span>
+              <span className="text-gray-300 font-bold">&middot;</span>
+              <span>SEO Built-In</span>
+              <span className="text-gray-300 font-bold">&middot;</span>
+              <span>Direct Access</span>
             </motion.div>
           )}
         </AnimatePresence>
@@ -128,7 +153,7 @@ export function Hero() {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
               className="flex flex-wrap items-center justify-center gap-8 mt-[60px] border-t border-gray-200 pt-8 w-full max-w-md"
             >
               {stats.map((stat, i) => (
@@ -144,14 +169,6 @@ export function Hero() {
             </motion.div>
           )}
         </AnimatePresence>
-      </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-30">
-        <span className="text-[10px] text-gray-400 tracking-widest uppercase">
-          Scroll
-        </span>
-        <div className="w-px h-8 bg-gradient-to-b from-gray-400 to-transparent" />
       </div>
     </section>
   );

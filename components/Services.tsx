@@ -43,20 +43,23 @@ export function Services() {
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
-    <section id="services" className="min-h-screen px-6 bg-white flex flex-col items-center justify-center text-center">
-      <div className="w-full max-w-[1100px] mx-auto flex flex-col items-center text-center">
-        {/* Section header */}
+    <section
+      id="services"
+      className="min-h-screen px-6 bg-white flex flex-col items-center justify-center py-[160px]"
+    >
+      <div className="w-full max-w-[1100px] mx-auto flex flex-col items-start text-left">
+        {/* Section header left-aligned */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="mb-[80px] text-center"
+          className="mb-[80px] text-left"
           ref={ref}
         >
-          <p className="text-xs font-semibold text-[#6b7280] tracking-[0.2em] uppercase mb-[24px]">
+          <p className="text-[12px] tracking-[0.12em] text-[#999999] font-medium uppercase mb-[24px]">
             Services
           </p>
-          <h2 className="font-heading text-4xl sm:text-5xl font-bold text-[#111111]">
+          <h2 className="font-heading text-4xl sm:text-5xl font-bold text-[#111111] tracking-[-0.02em]">
             What&apos;s included
           </h2>
         </motion.div>
@@ -76,19 +79,20 @@ export function Services() {
                 variants={fadeUp}
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.25, ease: "easeOut" }}
-                className="bg-white border border-[#e5e5e5] rounded-xl p-[48px] flex flex-col items-center text-center gap-4 group hover:border-[#d1d5db] hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] transition-all duration-300"
+                className="bg-white rounded-[16px] p-[40px] flex flex-col items-start text-left gap-5 shadow-[0_1px_3px_rgba(0,0,0,0.08)] border-0 hover:shadow-[0_4px_20px_rgba(0,0,0,0.12)] transition-all duration-300"
               >
-                <div className="w-10 h-10 bg-[#f3f4f6] rounded-lg flex items-center justify-center shrink-0 group-hover:bg-[#111111] transition-colors duration-300">
+                {/* 40x40 light gray circle icon wrap */}
+                <div className="w-10 h-10 bg-[#f0f0f0] rounded-full flex items-center justify-center shrink-0">
                   <Icon
                     size={18}
-                    className="text-[#374151] group-hover:text-white transition-colors duration-300"
+                    className="text-[#111111]"
                   />
                 </div>
-                <div className="flex flex-col gap-2">
-                  <h3 className="font-heading text-base font-bold text-[#111111]">
+                <div className="flex flex-col gap-2.5">
+                  <h3 className="font-heading text-base font-bold text-[#111111] tracking-tight">
                     {service.title}
                   </h3>
-                  <p className="text-sm text-[#374151] leading-relaxed">
+                  <p className="text-sm text-[#444444] leading-[1.7]">
                     {service.body}
                   </p>
                 </div>

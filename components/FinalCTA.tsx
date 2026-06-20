@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { X } from "lucide-react";
@@ -17,6 +17,12 @@ export function FinalCTA() {
   const [website, setWebsite] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [errors, setErrors] = useState<{ name?: string; email?: string; phone?: string }>({});
+
+  useEffect(() => {
+    const handleOpen = () => setIsOpen(true);
+    window.addEventListener("open-contact-modal", handleOpen);
+    return () => window.removeEventListener("open-contact-modal", handleOpen);
+  }, []);
 
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value.replace(/\D/g, "");
@@ -93,46 +99,48 @@ export function FinalCTA() {
   return (
     <section
       id="contact"
-      className="py-[160px] px-6 bg-white flex flex-col items-center text-center"
+      className="min-h-screen px-6 bg-[#f5f5f5] flex flex-col items-center justify-center text-center relative overflow-hidden"
     >
       <div
         ref={ref}
-        className="w-full max-w-[1100px] mx-auto flex flex-col items-center text-center gap-8"
+        className="relative z-10 w-full max-w-[1100px] mx-auto flex flex-col items-center text-center gap-10 py-[120px]"
       >
         {/* Eyebrow */}
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.4 }}
-          className="text-xs font-semibold text-[#6b7280] tracking-[0.2em] uppercase mb-[24px]"
+          className="text-[12px] tracking-[0.12em] text-[#999999] font-medium uppercase mb-[24px]"
         >
           READY TO START?
         </motion.p>
 
-        {/* Headline */}
+        {/* Two-line Headline */}
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="font-heading text-4xl sm:text-5xl md:text-6xl font-bold text-[#111111] leading-tight"
+          className="font-heading font-bold text-[#111111] leading-[1.05] tracking-[-0.03em] max-w-4xl"
+          style={{ fontSize: "clamp(40px, 6vw, 80px)" }}
         >
-          Let&apos;s build something that ranks.
+          Your competitors already have a site.
+          <span className="block text-[#bbbbbb] mt-3">Do it better.</span>
         </motion.h2>
 
-        {/* CTA Button */}
+        {/* CTA Button & Muted Text */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="flex flex-col items-center gap-4"
+          className="flex flex-col items-center gap-4 w-full sm:w-auto"
         >
           <button
             onClick={() => setIsOpen(true)}
-            className="inline-flex items-center justify-center gap-2 bg-[#111111] text-white font-semibold text-base px-10 py-4 rounded-full hover:bg-black transition-colors duration-200 shadow-[0_4px_20px_rgba(0,0,0,0.15)] cursor-pointer"
+            className="w-full sm:w-auto inline-flex items-center justify-center bg-[#111111] text-white font-semibold text-base px-10 py-4 rounded-full hover:bg-black transition-colors duration-200 shadow-[0_4px_20px_rgba(0,0,0,0.15)] cursor-pointer"
           >
-            Get Started →
+            Get Started &rarr;
           </button>
-          <p className="text-sm text-[#9ca3af]">
+          <p className="text-sm text-[#888888] font-medium">
             No commitment until you approve the design.
           </p>
         </motion.div>
@@ -187,7 +195,7 @@ export function FinalCTA() {
                 <>
                   <div className="flex flex-col gap-1.5 text-left">
                     <h3 className="font-heading text-2xl font-bold text-white">
-                      Book a Demo
+                      Book a Free Consultation
                     </h3>
                     <p className="text-xs text-[#888888]">
                       Enter your details below to schedule a fast, 15-minute walkthrough.

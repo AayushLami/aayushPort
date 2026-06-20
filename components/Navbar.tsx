@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
-import { Button } from "@/components/ui/Button";
 
 const navLinks = [
   { label: "Services", href: "#services" },
@@ -25,20 +24,30 @@ export function Navbar() {
     setLastY(latest);
   });
 
+  const triggerContactModal = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.dispatchEvent(new CustomEvent("open-contact-modal"));
+  };
+
   return (
     <motion.nav
-      className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-[#0a0a0a]/80 border-b border-[#1f1f1f]"
+      className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-white/90 border-b border-[#e5e5e5]"
       animate={{ y: hidden ? "-100%" : "0%" }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        {/* Logo */}
+        {/* Logo with 32x32px black square & white R inside */}
         <a
           href="#"
-          className="font-heading text-xl font-bold text-white tracking-tight hover:opacity-80 transition-opacity"
+          className="flex items-center gap-2.5 hover:opacity-90 transition-opacity"
           aria-label="Rankly — Home"
         >
-          Rankly
+          <div className="w-8 h-8 bg-black flex items-center justify-center rounded-[6px] shrink-0">
+            <span className="font-heading text-base font-bold text-white leading-none">R</span>
+          </div>
+          <span className="font-heading text-xl font-bold text-black tracking-tight">
+            Rankly
+          </span>
         </a>
 
         {/* Desktop Nav */}
@@ -47,27 +56,25 @@ export function Navbar() {
             <a
               key={link.label}
               href={link.href}
-              className="text-sm text-[#888888] hover:text-white transition-colors relative group"
+              className="text-sm font-medium text-[#444444] hover:text-black transition-colors relative group py-1"
             >
               {link.label}
-              <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-white group-hover:w-full transition-all duration-300" />
+              <span className="absolute bottom-0 left-0 w-0 h-px bg-black group-hover:w-full transition-all duration-300" />
             </a>
           ))}
         </div>
 
         {/* CTA */}
-        <Button
-          href="#contact"
-          variant="primary"
-          size="sm"
-          className="hidden md:inline-flex"
+        <button
+          onClick={triggerContactModal}
+          className="hidden md:inline-flex items-center justify-center font-semibold text-sm tracking-tight text-white bg-black hover:bg-neutral-800 transition-colors px-[20px] py-[10px] rounded-[8px] cursor-pointer"
         >
           Get Started
-        </Button>
+        </button>
 
         {/* Mobile menu button */}
         <button
-          className="md:hidden text-[#888888] hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white p-1"
+          className="md:hidden text-gray-500 hover:text-black transition-colors focus:outline-none p-1"
           aria-label="Open menu"
           onClick={() => {
             const el = document.getElementById("mobile-menu");
@@ -85,14 +92,14 @@ export function Navbar() {
       {/* Mobile Menu */}
       <div
         id="mobile-menu"
-        className="hidden md:hidden border-t border-[#1f1f1f] bg-[#0a0a0a]"
+        className="hidden md:hidden border-t border-[#e5e5e5] bg-white"
       >
         <div className="px-6 py-4 flex flex-col gap-4">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="text-sm text-[#888888] hover:text-white transition-colors"
+              className="text-sm font-medium text-[#444444] hover:text-black transition-colors"
               onClick={() =>
                 document.getElementById("mobile-menu")?.classList.add("hidden")
               }
@@ -100,16 +107,15 @@ export function Navbar() {
               {link.label}
             </a>
           ))}
-          <Button
-            href="#contact"
-            variant="primary"
-            size="sm"
-            onClick={() =>
-              document.getElementById("mobile-menu")?.classList.add("hidden")
-            }
+          <button
+            onClick={(e) => {
+              triggerContactModal(e);
+              document.getElementById("mobile-menu")?.classList.add("hidden");
+            }}
+            className="w-full inline-flex items-center justify-center font-semibold text-sm tracking-tight text-white bg-black hover:bg-neutral-800 transition-colors py-3 rounded-[8px] cursor-pointer"
           >
             Get Started
-          </Button>
+          </button>
         </div>
       </div>
     </motion.nav>
