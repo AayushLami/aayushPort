@@ -31,7 +31,7 @@ export function About() {
           initial={{ opacity: 0, y: 16 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="section-eyebrow text-[12px] tracking-[0.12em] text-[#999999] font-medium uppercase mb-[12px]"
+          className="section-eyebrow text-[12px] tracking-[0.12em] text-[#999999] font-medium uppercase"
         >
           About
         </motion.p>
@@ -41,7 +41,7 @@ export function About() {
           initial={{ opacity: 0, y: 16 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="section-title font-heading font-extrabold text-[#111111] tracking-[-0.03em] mb-[56px]"
+          className="section-title font-heading font-extrabold text-[#111111] tracking-[-0.03em]"
           style={{ fontSize: "clamp(36px, 5vw, 64px)" }}
         >
           Aayush Lamichhane

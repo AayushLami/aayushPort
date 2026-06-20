@@ -110,7 +110,7 @@ export function FinalCTA() {
           initial={{ opacity: 0, y: 16 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.4 }}
-          className="section-eyebrow text-[12px] tracking-[0.12em] text-neutral-500 font-medium uppercase mb-[12px]"
+          className="section-eyebrow text-[12px] tracking-[0.12em] text-neutral-500 font-medium uppercase"
         >
           READY TO START?
         </motion.p>
@@ -120,7 +120,7 @@ export function FinalCTA() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="section-title font-heading font-extrabold text-white leading-[1.05] tracking-[-0.03em] max-w-4xl mb-[56px]"
+          className="section-title font-heading font-extrabold text-white leading-[1.05] tracking-[-0.03em] max-w-4xl"
           style={{ fontSize: "clamp(36px, 5vw, 64px)" }}
         >
           Your competitors already have a site.

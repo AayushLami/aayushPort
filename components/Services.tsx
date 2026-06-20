@@ -89,7 +89,7 @@ export function Services() {
               <motion.div
                 key={i}
                 variants={fadeUp}
-                className="card bg-white rounded-[12px] !p-[28px] flex flex-col items-start gap-4 shadow-[0_1px_3px_rgba(0,0,0,0.07)] border-0 hover:-translate-y-[3px] hover:shadow-[0_8px_24px_rgba(0,0,0,0.1)] transition-all duration-200 ease-out cursor-default"
+                className="card bg-white rounded-[12px] flex flex-col items-start gap-4 shadow-[0_1px_3px_rgba(0,0,0,0.07)] border-0 hover:-translate-y-[3px] hover:shadow-[0_8px_24px_rgba(0,0,0,0.1)] transition-all duration-200 ease-out cursor-default"
               >
                 {/* Horizontal layout inside each card */}
                 <div className="flex gap-4 items-start w-full">

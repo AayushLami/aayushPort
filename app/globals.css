@@ -96,3 +96,8 @@ section {
 .card {
   padding: 32px;
 }
+
+#services .card {
+  padding: 28px;
+}
+

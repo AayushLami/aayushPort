@@ -35,7 +35,7 @@ export async function POST(request: Request) {
     // Send email using Resend
     const { data, error } = await resend.emails.send({
       from: "Rankly Demos <onboarding@resend.dev>",
-      to: "aayush@rankly.dev",
+      to: "alamichhane93@gmail.com",
       subject: `New Rankly Demo Request from ${name}`,
       html: `
         <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #eee;">

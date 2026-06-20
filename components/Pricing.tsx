@@ -36,7 +36,7 @@ export function Pricing() {
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="section-title text-left w-full flex flex-col items-start mb-[56px]"
+          className="section-title text-left w-full flex flex-col items-start"
         >
           <p className="section-eyebrow text-[12px] tracking-[0.12em] text-[#999999] font-medium uppercase mb-[12px]">
             Pricing
