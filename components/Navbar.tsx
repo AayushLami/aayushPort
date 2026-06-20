@@ -12,12 +12,14 @@ const navLinks = [
 
 export function Navbar() {
   const [hidden, setHidden] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const [lastY, setLastY] = useState(0);
   const { scrollY } = useScroll();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     if (latest > lastY && latest > 80) {
       setHidden(true);
+      setIsOpen(false); // Close mobile menu when scrolling down
     } else {
       setHidden(false);
     }
@@ -26,6 +28,7 @@ export function Navbar() {
 
   const triggerContactModal = (e: React.MouseEvent) => {
     e.preventDefault();
+    setIsOpen(false);
     window.dispatchEvent(new CustomEvent("open-contact-modal"));
   };
 
@@ -64,60 +67,60 @@ export function Navbar() {
           ))}
         </div>
 
-        {/* CTA */}
-        <button
-          onClick={triggerContactModal}
-          className="hidden md:inline-flex items-center justify-center font-semibold text-sm tracking-tight text-white bg-black hover:bg-neutral-800 transition-colors px-[22px] py-[10px] rounded-full cursor-pointer"
-        >
-          Get Started
-        </button>
-
-        {/* Mobile menu button */}
-        <button
-          className="md:hidden text-gray-500 hover:text-black transition-colors focus:outline-none p-1"
-          aria-label="Open menu"
-          onClick={() => {
-            const el = document.getElementById("mobile-menu");
-            if (el) el.classList.toggle("hidden");
-          }}
-        >
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-            <rect y="3" width="20" height="2" />
-            <rect y="9" width="20" height="2" />
-            <rect y="15" width="20" height="2" />
-          </svg>
-        </button>
-      </div>
-
-      {/* Mobile Menu */}
-      <div
-        id="mobile-menu"
-        className="hidden md:hidden border-t border-[#e5e5e5] bg-white"
-      >
-        <div className="px-6 py-4 flex flex-col gap-4">
-          {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="text-sm font-medium text-[#444444] hover:text-black transition-colors"
-              onClick={() =>
-                document.getElementById("mobile-menu")?.classList.add("hidden")
-              }
-            >
-              {link.label}
-            </a>
-          ))}
+        {/* CTA and Hamburger Group */}
+        <div className="flex items-center gap-4">
           <button
-            onClick={(e) => {
-              triggerContactModal(e);
-              document.getElementById("mobile-menu")?.classList.add("hidden");
-            }}
-            className="w-full inline-flex items-center justify-center font-semibold text-sm tracking-tight text-white bg-black hover:bg-neutral-800 transition-colors py-[10px] px-[22px] rounded-full cursor-pointer"
+            onClick={triggerContactModal}
+            className="inline-flex items-center justify-center font-semibold tracking-tight text-white bg-black hover:bg-neutral-800 transition-colors px-4 py-2 text-[14px] md:px-[22px] md:py-[10px] md:text-sm rounded-full cursor-pointer"
           >
             Get Started
           </button>
+
+          {/* Mobile menu button */}
+          <button
+            className="md:hidden text-gray-500 hover:text-black transition-colors focus:outline-none p-1"
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? (
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                <path
+                  fillRule="evenodd"
+                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            ) : (
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                <rect y="3" width="20" height="2" />
+                <rect y="9" width="20" height="2" />
+                <rect y="15" width="20" height="2" />
+              </svg>
+            )}
+          </button>
         </div>
       </div>
+
+      {/* Mobile Menu Dropdown */}
+      {isOpen && (
+        <div
+          id="mobile-menu"
+          className="md:hidden border-t border-[#e5e5e5] bg-white w-full"
+        >
+          <div className="p-5 flex flex-col">
+            {navLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className="text-[18px] font-medium text-[#444444] hover:text-black py-4 border-b border-[#e5e5e5] last:border-0 transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
     </motion.nav>
   );
 }

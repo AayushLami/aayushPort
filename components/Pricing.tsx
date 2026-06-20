@@ -157,7 +157,7 @@ export function Pricing() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.25 }}
           whileHover={{ y: -3 }}
-          className="mt-[24px] w-full bg-white rounded-[16px] px-[28px] py-[20px] flex items-center justify-between gap-4 text-left shadow-[0_1px_3px_rgba(0,0,0,0.07)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.1)] transition-all duration-200 ease-out cursor-default"
+          className="mt-[24px] w-full bg-white rounded-[16px] px-[28px] py-[20px] flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-left shadow-[0_1px_3px_rgba(0,0,0,0.07)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.1)] transition-all duration-200 ease-out cursor-default"
         >
           <div className="flex flex-col gap-1 text-left">
             <span className="font-heading text-base font-bold text-[#111111]">

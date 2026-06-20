@@ -53,7 +53,7 @@ export function About() {
             initial={{ opacity: 0, y: 16 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-[#444444] leading-[1.7] text-base md:text-lg text-center"
+            className="text-[#444444] leading-[1.7] text-sm md:text-base lg:text-lg text-center"
           >
             I work with businesses across the USA to build websites that don&apos;t
             just look good — they generate leads, increase sales, and grow revenue.
@@ -61,15 +61,15 @@ export function About() {
             that turns your site into your best salesperson.
           </motion.p>
 
-          {/* Centered Bullet list */}
+          {/* Centered Bullet list (2 columns on desktop, 1 on mobile) */}
           <motion.ul
             initial={{ opacity: 0, y: 16 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="flex flex-col items-center gap-3 w-full"
+            className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-x-8 md:gap-y-4 w-full max-w-md md:max-w-xl mx-auto"
           >
             {bullets.map((b, i) => (
-              <li key={i} className="flex items-center gap-3 justify-center">
+              <li key={i} className="flex items-center gap-3 justify-start">
                 <CheckCircle2 size={16} className="text-[#111111] shrink-0 animate-pulse" strokeWidth={2.5} />
                 <span className="text-sm font-medium text-[#444444] leading-[1.7]">{b}</span>
               </li>

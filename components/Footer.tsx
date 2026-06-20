@@ -20,26 +20,26 @@ function GitHubIcon() {
 export function Footer() {
   return (
     <footer className="bg-[#0a0a0a] text-[#888888] py-16 px-6 border-t border-white/5">
-      <div className="max-w-[1100px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-left">
+      <div className="max-w-[1100px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 text-center md:text-left">
         {/* Left Column: Logo & Tagline */}
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3 items-center md:items-start">
           <span className="font-heading text-xl font-bold text-white tracking-tight">
             Rankly
           </span>
           <p className="text-sm text-[#888888]">
             Websites that get found.
           </p>
-          <p className="text-xs text-[#555555] mt-6">
+          <p className="text-xs text-[#555555] mt-4 md:mt-6">
             &copy; {new Date().getFullYear()} Aayush Lamichhane. All rights reserved.
           </p>
         </div>
 
         {/* Center Column: Navigation Links */}
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3 items-center md:items-start">
           <span className="text-xs font-semibold text-white tracking-wider uppercase mb-1">
             Navigation
           </span>
-          <nav className="flex flex-col gap-2.5">
+          <nav className="flex flex-col gap-2.5 items-center md:items-start">
             <a href="#services" className="text-sm text-[#888888] hover:text-white transition-colors w-fit">
               Services
             </a>
@@ -56,11 +56,11 @@ export function Footer() {
         </div>
 
         {/* Right Column: Contact Info */}
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3 items-center md:items-start">
           <span className="text-xs font-semibold text-white tracking-wider uppercase mb-1">
             Contact
           </span>
-          <div className="flex flex-col gap-2.5">
+          <div className="flex flex-col gap-2.5 items-center md:items-start">
             <a
               href="mailto:alamichhane93@gmail.com"
               className="text-sm text-[#888888] hover:text-white transition-colors flex items-center gap-2 w-fit"
@@ -75,7 +75,7 @@ export function Footer() {
               <Phone size={14} className="shrink-0" />
               <span>908-338-6832</span>
             </a>
-            <div className="flex items-center gap-4 mt-4">
+            <div className="flex items-center justify-center md:justify-start gap-4 mt-4">
               <a
                 href="https://github.com/aayushlamichhane"
                 target="_blank"

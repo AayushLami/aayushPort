@@ -121,7 +121,7 @@ export function FinalCTA() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.1 }}
           className="section-title font-heading font-extrabold text-white leading-[1.05] tracking-[-0.03em] max-w-4xl"
-          style={{ fontSize: "clamp(36px, 5vw, 64px)" }}
+          style={{ fontSize: "clamp(28px, 6vw, 80px)" }}
         >
           Your competitors already have a site.
           <span className="block text-neutral-500 mt-3">Do it better.</span>

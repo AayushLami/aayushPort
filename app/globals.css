@@ -27,6 +27,7 @@ body {
   background-color: #ffffff !important;
   color: #111111 !important;
   line-height: 1.7 !important;
+  overflow-x: hidden;
 }
 
 /* ─── Focus rings ───────────────────────────────────────────────── */
@@ -75,6 +76,12 @@ body {
 section {
   padding-top: 120px;
   padding-bottom: 120px;
+}
+
+@media (max-width: 767px) {
+  section {
+    padding: 80px 20px !important;
+  }
 }
 
 .section-eyebrow {

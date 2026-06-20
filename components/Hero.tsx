@@ -80,7 +80,7 @@ export function Hero() {
         {/* Typewriter headline */}
         <h1
           className="font-heading font-extrabold text-[#111111] leading-[1.1] tracking-[-0.03em] min-h-[3.3em] sm:min-h-[2.2em] md:min-h-[2.2em] max-w-4xl"
-          style={{ fontSize: "clamp(36px, 5vw, 64px)" }}
+          style={{ fontSize: "clamp(32px, 8vw, 96px)" }}
         >
           {displayed}
           <span
@@ -98,7 +98,8 @@ export function Hero() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              className="text-[20px] text-[#666666] max-w-[520px] mx-auto leading-relaxed"
+              className="text-[#666666] max-w-[520px] mx-auto leading-relaxed"
+              style={{ fontSize: "clamp(15px, 3vw, 20px)" }}
             >
               I build fast, SEO-optimized websites that rank on Google and turn
               visitors into customers. <span className="text-gray-400">No templates. No fluff.</span>
@@ -113,7 +114,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
-              className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto"
+              className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full sm:w-auto"
             >
               <button
                 onClick={triggerContactModal}
@@ -138,7 +139,7 @@ export function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="text-[13px] text-[#888888] font-medium flex items-center justify-center gap-2"
+              className="text-[13px] text-[#888888] font-medium flex flex-wrap items-center justify-center gap-x-2 gap-y-1.5 px-4"
             >
               <span>Fast Delivery</span>
               <span className="text-gray-300 font-bold">&middot;</span>
@@ -156,14 +157,14 @@ export function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="flex flex-wrap items-center justify-center gap-8 mt-[60px] border-t border-gray-200 pt-8 w-full max-w-md"
+              className="flex flex-row flex-nowrap items-center justify-between mt-[60px] border-t border-gray-200 pt-8 w-full max-w-sm px-4"
             >
               {stats.map((stat, i) => (
                 <div key={i} className="flex flex-col items-center gap-0.5">
-                  <span className="font-heading text-xl font-bold text-[#111111]">
+                  <span className="font-heading text-lg sm:text-xl font-bold text-[#111111]">
                     {stat.value}
                   </span>
-                  <span className="text-xs text-gray-500 tracking-wide">
+                  <span className="text-[10px] sm:text-xs text-gray-500 tracking-wide">
                     {stat.label}
                   </span>
                 </div>
