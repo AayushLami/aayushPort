@@ -99,18 +99,18 @@ export function FinalCTA() {
   return (
     <section
       id="contact"
-      className="min-h-screen px-6 bg-[#0a0a0a] flex flex-col items-center justify-center text-center relative overflow-hidden"
+      className="section min-h-screen px-6 bg-[#0a0a0a] flex flex-col items-center justify-center text-center relative overflow-hidden"
     >
       <div
         ref={ref}
-        className="relative z-10 w-full max-w-[1100px] mx-auto flex flex-col items-center text-center gap-10 py-[120px]"
+        className="relative z-10 w-full max-w-[1100px] mx-auto flex flex-col items-center text-center gap-10"
       >
         {/* Eyebrow */}
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.4 }}
-          className="text-[12px] tracking-[0.12em] text-neutral-500 font-medium uppercase mb-[24px]"
+          className="section-eyebrow text-[12px] tracking-[0.12em] text-neutral-500 font-medium uppercase mb-[12px]"
         >
           READY TO START?
         </motion.p>
@@ -120,7 +120,7 @@ export function FinalCTA() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="font-heading font-extrabold text-white leading-[1.05] tracking-[-0.03em] max-w-4xl"
+          className="section-title font-heading font-extrabold text-white leading-[1.05] tracking-[-0.03em] max-w-4xl mb-[56px]"
           style={{ fontSize: "clamp(36px, 5vw, 64px)" }}
         >
           Your competitors already have a site.

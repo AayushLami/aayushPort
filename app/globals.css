@@ -70,3 +70,29 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ─── Global Spacing System ─────────────────────────────────────── */
+section {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.section-eyebrow {
+  margin-bottom: 12px;
+}
+
+.section-title {
+  margin-bottom: 56px;
+}
+
+.section-subtitle {
+  margin-bottom: 40px;
+}
+
+.card-grid {
+  gap: 24px;
+}
+
+.card {
+  padding: 32px;
+}

@@ -45,7 +45,7 @@ export function Services() {
   return (
     <section
       id="services"
-      className="min-h-screen px-6 bg-[#f5f5f5] flex flex-col items-center justify-center py-[160px] relative overflow-hidden"
+      className="section min-h-screen px-6 bg-[#f5f5f5] flex flex-col items-center justify-center relative overflow-hidden"
     >
       {/* Subtle dot grid background */}
       <div
@@ -62,7 +62,7 @@ export function Services() {
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="mb-[60px] text-left"
+          className="section-title text-left mb-[64px]"
           ref={ref}
         >
           <p className="text-[12px] tracking-[0.12em] text-[#999999] font-medium uppercase mb-[24px]">
@@ -81,7 +81,7 @@ export function Services() {
           variants={staggerContainer}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[20px] w-full"
+          className="card-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full"
         >
           {services.map((service, i) => {
             const Icon = service.icon;
@@ -89,7 +89,7 @@ export function Services() {
               <motion.div
                 key={i}
                 variants={fadeUp}
-                className="bg-white rounded-[12px] p-6 flex flex-col items-start gap-4 shadow-[0_1px_3px_rgba(0,0,0,0.07)] border-0 hover:-translate-y-[3px] hover:shadow-[0_8px_24px_rgba(0,0,0,0.1)] transition-all duration-200 ease-out cursor-default"
+                className="card bg-white rounded-[12px] !p-[28px] flex flex-col items-start gap-4 shadow-[0_1px_3px_rgba(0,0,0,0.07)] border-0 hover:-translate-y-[3px] hover:shadow-[0_8px_24px_rgba(0,0,0,0.1)] transition-all duration-200 ease-out cursor-default"
               >
                 {/* Horizontal layout inside each card */}
                 <div className="flex gap-4 items-start w-full">

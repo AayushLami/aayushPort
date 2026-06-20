@@ -23,7 +23,7 @@ export function About() {
   return (
     <section
       id="about"
-      className="min-h-screen px-6 bg-white flex flex-col items-center justify-center py-[160px]"
+      className="section min-h-screen px-6 bg-white flex flex-col items-center justify-center"
     >
       <div className="w-full max-w-[1100px] mx-auto text-center flex flex-col items-center">
         {/* Section eyebrow */}
@@ -31,7 +31,7 @@ export function About() {
           initial={{ opacity: 0, y: 16 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="text-[12px] tracking-[0.12em] text-[#999999] font-medium uppercase mb-[24px]"
+          className="section-eyebrow text-[12px] tracking-[0.12em] text-[#999999] font-medium uppercase mb-[12px]"
         >
           About
         </motion.p>
@@ -41,7 +41,7 @@ export function About() {
           initial={{ opacity: 0, y: 16 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="font-heading font-extrabold text-[#111111] tracking-[-0.03em] mb-[56px]"
+          className="section-title font-heading font-extrabold text-[#111111] tracking-[-0.03em] mb-[56px]"
           style={{ fontSize: "clamp(36px, 5vw, 64px)" }}
         >
           Aayush Lamichhane

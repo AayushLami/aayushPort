@@ -18,7 +18,7 @@ export function Pricing() {
   return (
     <section
       id="pricing"
-      className="min-h-screen px-6 bg-[#f5f5f5] flex flex-col items-center justify-center py-[160px] relative overflow-hidden"
+      className="section min-h-screen px-6 bg-[#f5f5f5] flex flex-col items-center justify-center relative overflow-hidden"
     >
       {/* Subtle dot grid background */}
       <div
@@ -28,6 +28,7 @@ export function Pricing() {
           backgroundSize: "24px 24px",
         }}
       />
+
       <div className="relative z-10 w-full max-w-[1100px] mx-auto flex flex-col items-start text-left">
         {/* Header - Left Aligned */}
         <motion.div
@@ -35,22 +36,22 @@ export function Pricing() {
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="mb-[56px] text-left w-full flex flex-col items-start"
+          className="section-title text-left w-full flex flex-col items-start mb-[56px]"
         >
-          <p className="text-[12px] tracking-[0.12em] text-[#999999] font-medium uppercase mb-[24px]">
+          <p className="section-eyebrow text-[12px] tracking-[0.12em] text-[#999999] font-medium uppercase mb-[12px]">
             Pricing
           </p>
           <h2
-            className="font-heading font-extrabold text-[#111111] tracking-[-0.03em] leading-none mb-3"
-            style={{ fontSize: "clamp(36px, 5vw, 64px)" }}
+            className="font-heading font-extrabold text-[#0a0a0a] tracking-[-0.03em] leading-none"
+            style={{ fontSize: "clamp(36px, 5vw, 60px)" }}
           >
             Simple pricing.<br />No surprises.
           </h2>
-          <p className="text-sm text-gray-500 mb-5 font-medium">
+          <p className="text-[15px] text-[#888888] mt-4 font-normal">
             50% upfront, 50% on launch.
           </p>
           {/* Reassurance pill */}
-          <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-gray-200 text-xs font-semibold text-gray-600 shadow-sm">
+          <div className="inline-flex items-center gap-1.5 px-[14px] py-[6px] rounded-full bg-white border border-[#e0e0e0] text-[13px] font-semibold text-[#444444] mt-3">
             <span className="text-emerald-500 font-bold">✓</span> No commitment until you approve the design
           </div>
         </motion.div>
@@ -60,7 +61,7 @@ export function Pricing() {
           variants={staggerContainer}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-3 gap-[40px] w-full"
+          className="card-grid grid grid-cols-1 md:grid-cols-3 w-full"
         >
           {pricingPlans.map((plan) => (
             <motion.div
@@ -86,7 +87,7 @@ export function Pricing() {
                 </div>
               )}
 
-              <div className="flex flex-col items-start text-left gap-8 p-[40px] flex-1">
+              <div className="card flex flex-col items-start text-left gap-8 flex-1">
                 {/* Plan name + best for */}
                 <div className="flex flex-col items-start text-left">
                   <h3 className={`font-heading text-lg font-bold mb-1.5 ${plan.popular ? "text-white" : "text-[#111111]"}`}>
@@ -100,7 +101,7 @@ export function Pricing() {
                 {/* Eyebrow above price + Price */}
                 <div className="flex flex-col items-start text-left">
                   <span className="text-[10px] font-bold tracking-wider uppercase text-gray-400 mb-1">
-                    {plan.id === "starter" ? "STARTER" : plan.id === "growth" ? "PROFESSIONAL" : "CUSTOM"}
+                    {plan.id === "starter" ? "STARTER" : plan.id === "professional" ? "PROFESSIONAL" : "CUSTOM"}
                   </span>
                   <div className="flex items-baseline gap-2">
                     <span className={`font-mono text-5xl font-bold leading-none ${plan.popular ? "text-white" : "text-[#111111]"}`}>
@@ -150,13 +151,13 @@ export function Pricing() {
           ))}
         </motion.div>
 
-        {/* Full-width maintenance row card below the cards */}
+        {/* Full-width maintenance card */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.25 }}
           whileHover={{ y: -3 }}
-          className="mt-10 w-full bg-[#e5e5e5]/40 border border-gray-200 rounded-[12px] p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-left shadow-sm hover:shadow-[0_8px_24px_rgba(0,0,0,0.1)] transition-all duration-200 ease-out cursor-default"
+          className="mt-[24px] w-full bg-white rounded-[16px] px-[28px] py-[20px] flex items-center justify-between gap-4 text-left shadow-[0_1px_3px_rgba(0,0,0,0.07)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.1)] transition-all duration-200 ease-out cursor-default"
         >
           <div className="flex flex-col gap-1 text-left">
             <span className="font-heading text-base font-bold text-[#111111]">
