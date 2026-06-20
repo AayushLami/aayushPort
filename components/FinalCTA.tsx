@@ -99,7 +99,7 @@ export function FinalCTA() {
   return (
     <section
       id="contact"
-      className="min-h-screen px-6 bg-[#f5f5f5] flex flex-col items-center justify-center text-center relative overflow-hidden"
+      className="min-h-screen px-6 bg-[#0a0a0a] flex flex-col items-center justify-center text-center relative overflow-hidden"
     >
       <div
         ref={ref}
@@ -110,7 +110,7 @@ export function FinalCTA() {
           initial={{ opacity: 0, y: 16 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.4 }}
-          className="text-[12px] tracking-[0.12em] text-[#999999] font-medium uppercase mb-[24px]"
+          className="text-[12px] tracking-[0.12em] text-neutral-500 font-medium uppercase mb-[24px]"
         >
           READY TO START?
         </motion.p>
@@ -120,11 +120,11 @@ export function FinalCTA() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="font-heading font-bold text-[#111111] leading-[1.05] tracking-[-0.03em] max-w-4xl"
-          style={{ fontSize: "clamp(40px, 6vw, 80px)" }}
+          className="font-heading font-extrabold text-white leading-[1.05] tracking-[-0.03em] max-w-4xl"
+          style={{ fontSize: "clamp(36px, 5vw, 64px)" }}
         >
           Your competitors already have a site.
-          <span className="block text-[#bbbbbb] mt-3">Do it better.</span>
+          <span className="block text-neutral-500 mt-3">Do it better.</span>
         </motion.h2>
 
         {/* CTA Button & Muted Text */}
@@ -136,11 +136,11 @@ export function FinalCTA() {
         >
           <button
             onClick={() => setIsOpen(true)}
-            className="w-full sm:w-auto inline-flex items-center justify-center bg-[#111111] text-white font-semibold text-base px-10 py-4 rounded-full hover:bg-black transition-colors duration-200 shadow-[0_4px_20px_rgba(0,0,0,0.15)] cursor-pointer"
+            className="w-full sm:w-auto inline-flex items-center justify-center bg-white text-black font-semibold text-base px-10 py-4 rounded-full hover:bg-neutral-200 transition-colors duration-200 shadow-[0_4px_20px_rgba(255,255,255,0.05)] cursor-pointer"
           >
             Get Started &rarr;
           </button>
-          <p className="text-sm text-[#888888] font-medium">
+          <p className="text-sm text-neutral-400 font-medium">
             No commitment until you approve the design.
           </p>
         </motion.div>

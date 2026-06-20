@@ -55,9 +55,8 @@ export function Hero() {
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          backgroundImage:
-            "radial-gradient(circle, rgba(0,0,0,0.04) 1px, transparent 1px)",
-          backgroundSize: "32px 32px",
+          backgroundImage: "radial-gradient(#d4d4d4 1px, transparent 1px)",
+          backgroundSize: "24px 24px",
         }}
       />
 
@@ -79,7 +78,10 @@ export function Hero() {
         </motion.div>
 
         {/* Typewriter headline */}
-        <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#111111] leading-[1.1] tracking-tight min-h-[3.3em] sm:min-h-[2.2em] md:min-h-[2.2em] max-w-4xl">
+        <h1
+          className="font-heading font-extrabold text-[#111111] leading-[1.1] tracking-[-0.03em] min-h-[3.3em] sm:min-h-[2.2em] md:min-h-[2.2em] max-w-4xl"
+          style={{ fontSize: "clamp(36px, 5vw, 64px)" }}
+        >
           {displayed}
           <span
             className="inline-block w-[3px] h-[0.85em] bg-[#111111] ml-1 align-middle"

@@ -41,7 +41,8 @@ export function About() {
           initial={{ opacity: 0, y: 16 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="font-heading text-4xl sm:text-5xl font-bold text-[#111111] tracking-[-0.02em] mb-[80px]"
+          className="font-heading font-extrabold text-[#111111] tracking-[-0.03em] mb-[80px]"
+          style={{ fontSize: "clamp(36px, 5vw, 64px)" }}
         >
           Aayush Lamichhane
         </motion.h2>

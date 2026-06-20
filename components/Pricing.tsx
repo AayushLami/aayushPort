@@ -18,9 +18,17 @@ export function Pricing() {
   return (
     <section
       id="pricing"
-      className="min-h-screen px-6 bg-[#f5f5f5] flex flex-col items-center justify-center py-[160px]"
+      className="min-h-screen px-6 bg-[#f5f5f5] flex flex-col items-center justify-center py-[160px] relative overflow-hidden"
     >
-      <div className="w-full max-w-[1100px] mx-auto flex flex-col items-start text-left">
+      {/* Subtle dot grid background */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: "radial-gradient(#d4d4d4 1px, transparent 1px)",
+          backgroundSize: "24px 24px",
+        }}
+      />
+      <div className="relative z-10 w-full max-w-[1100px] mx-auto flex flex-col items-start text-left">
         {/* Header - Left Aligned */}
         <motion.div
           ref={ref}
@@ -32,7 +40,10 @@ export function Pricing() {
           <p className="text-[12px] tracking-[0.12em] text-[#999999] font-medium uppercase mb-[24px]">
             Pricing
           </p>
-          <h2 className="font-heading text-5xl sm:text-6xl font-bold text-[#111111] tracking-[-0.02em] leading-none mb-3">
+          <h2
+            className="font-heading font-extrabold text-[#111111] tracking-[-0.03em] leading-none mb-3"
+            style={{ fontSize: "clamp(36px, 5vw, 64px)" }}
+          >
             Simple pricing.<br />No surprises.
           </h2>
           <p className="text-sm text-gray-500 mb-5 font-medium">
@@ -55,14 +66,14 @@ export function Pricing() {
             <motion.div
               key={plan.id}
               variants={fadeUp}
-              whileHover={{ y: -6 }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
+              whileHover={{ y: -3 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
               className={`
-                flex flex-col rounded-[16px] overflow-hidden border transition-all duration-300
+                flex flex-col rounded-[16px] overflow-hidden border transition-all duration-200 ease-out hover:shadow-[0_8px_24px_rgba(0,0,0,0.1)]
                 ${
                   plan.popular
                     ? "bg-[#111111] border-[#111111] shadow-[0_20px_60px_rgba(0,0,0,0.12)]"
-                    : "bg-white border-[#e5e5e5] hover:border-[#d1d5db] hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)]"
+                    : "bg-white border-[#e5e5e5] shadow-sm"
                 }
               `}
             >
@@ -144,7 +155,8 @@ export function Pricing() {
           initial={{ opacity: 0, y: 16 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.25 }}
-          className="mt-10 w-full bg-[#e5e5e5]/40 border border-gray-200 rounded-[12px] p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-left shadow-sm"
+          whileHover={{ y: -3 }}
+          className="mt-10 w-full bg-[#e5e5e5]/40 border border-gray-200 rounded-[12px] p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-left shadow-sm hover:shadow-[0_8px_24px_rgba(0,0,0,0.1)] transition-all duration-200 ease-out cursor-default"
         >
           <div className="flex flex-col gap-1 text-left">
             <span className="font-heading text-base font-bold text-[#111111]">
