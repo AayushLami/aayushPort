@@ -136,7 +136,7 @@ export function FinalCTA() {
         >
           <button
             onClick={() => setIsOpen(true)}
-            className="w-full sm:w-auto inline-flex items-center justify-center bg-white text-black font-[600] text-[15px] tracking-tight px-[28px] py-[14px] rounded-full hover:bg-neutral-200 transition-colors duration-200 shadow-[0_4px_20px_rgba(255,255,255,0.05)] cursor-pointer"
+            className="btn-primary w-full sm:w-auto justify-center"
           >
             Get Started &rarr;
           </button>

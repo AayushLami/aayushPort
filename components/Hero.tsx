@@ -6,11 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const HEADLINE = "Your website should work as hard as you do.";
 const CHAR_INTERVAL = 60;
 
-const stats = [
-  { value: "10+", label: "Sites Built" },
-  { value: "95+", label: "Google PageSpeed" },
-  { value: "#1", label: "First Page Rankings" },
-];
+
 
 export function Hero() {
   const [displayed, setDisplayed] = useState("");
@@ -118,13 +114,13 @@ export function Hero() {
             >
               <button
                 onClick={triggerContactModal}
-                className="w-full sm:w-auto inline-flex items-center justify-center font-[600] text-[15px] tracking-tight text-white bg-black hover:bg-neutral-800 transition-colors px-[28px] py-[14px] rounded-full cursor-pointer"
+                className="btn-primary w-full sm:w-auto justify-center"
               >
                 Get Started &rarr;
               </button>
               <a
                 href="#pricing"
-                className="w-full sm:w-auto inline-flex items-center justify-center font-[600] text-[15px] tracking-tight text-black bg-white border border-[#d4d4d4] hover:bg-neutral-50 transition-colors px-[28px] py-[14px] rounded-full"
+                className="btn-secondary w-full sm:w-auto justify-center"
               >
                 See Pricing
               </a>
@@ -146,29 +142,6 @@ export function Hero() {
               <span>SEO Built-In</span>
               <span className="text-gray-300 font-bold">&middot;</span>
               <span>Direct Access</span>
-            </motion.div>
-          )}
-        </AnimatePresence>
-
-        {/* Stats bar */}
-        <AnimatePresence>
-          {typingDone && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="flex flex-row flex-nowrap items-center justify-between mt-[60px] border-t border-gray-200 pt-8 w-full max-w-sm px-4"
-            >
-              {stats.map((stat, i) => (
-                <div key={i} className="flex flex-col items-center gap-0.5">
-                  <span className="font-heading text-lg sm:text-xl font-bold text-[#111111]">
-                    {stat.value}
-                  </span>
-                  <span className="text-[10px] sm:text-xs text-gray-500 tracking-wide">
-                    {stat.label}
-                  </span>
-                </div>
-              ))}
             </motion.div>
           )}
         </AnimatePresence>

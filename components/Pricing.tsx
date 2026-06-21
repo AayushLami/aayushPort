@@ -135,14 +135,7 @@ export function Pricing() {
                 {/* CTA Button */}
                 <button
                   onClick={triggerContactModal}
-                  className={`
-                    w-full inline-flex items-center justify-center font-[600] text-[15px] tracking-tight transition-all duration-200 px-[28px] py-[14px] rounded-full cursor-pointer
-                    ${
-                      plan.popular
-                        ? "bg-white text-black border border-white hover:bg-neutral-100"
-                        : "bg-black text-white border border-black hover:bg-neutral-800"
-                    }
-                  `}
+                  className="btn-primary w-full justify-center"
                 >
                   Get started &rarr;
                 </button>
@@ -157,7 +150,7 @@ export function Pricing() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.25 }}
           whileHover={{ y: -3 }}
-          className="mt-[24px] w-full bg-white rounded-[16px] px-[28px] py-[20px] flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-left shadow-[0_1px_3px_rgba(0,0,0,0.07)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.1)] transition-all duration-200 ease-out cursor-default"
+          className="mt-[48px] w-full bg-white rounded-[16px] px-[28px] py-[20px] flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-left shadow-[0_1px_3px_rgba(0,0,0,0.07)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.1)] transition-all duration-200 ease-out cursor-default"
         >
           <div className="flex flex-col gap-1 text-left">
             <span className="font-heading text-base font-bold text-[#111111]">

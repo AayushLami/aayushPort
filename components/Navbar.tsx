@@ -71,7 +71,7 @@ export function Navbar() {
         <div className="flex items-center gap-4">
           <button
             onClick={triggerContactModal}
-            className="inline-flex items-center justify-center font-semibold tracking-tight text-white bg-black hover:bg-neutral-800 transition-colors px-4 py-2 text-[14px] md:px-[22px] md:py-[10px] md:text-sm rounded-full cursor-pointer"
+            className="btn-primary px-4 py-2 md:px-6 md:py-3"
           >
             Get Started
           </button>
