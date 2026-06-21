@@ -20,57 +20,57 @@ function GitHubIcon() {
 export function Footer() {
   return (
     <footer className="bg-[#0a0a0a] text-[#888888] py-16 px-6 border-t border-white/5">
-      <div className="max-w-[1100px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 text-center">
+      <div className="max-w-[1100px] mx-auto flex flex-col items-center text-center gap-10">
         {/* Left Column: Logo & Tagline */}
-        <div className="flex flex-col gap-3 items-center">
-          <span className="font-heading text-xl font-bold text-white tracking-tight">
+        <div className="flex flex-col gap-3 items-center text-center">
+          <span className="font-heading text-xl font-bold text-white tracking-tight text-center">
             Rankly
           </span>
-          <p className="text-sm text-[#888888]">
+          <p className="text-sm text-[#888888] text-center">
             Websites that get found.
           </p>
-          <p className="text-xs text-[#555555] mt-4 md:mt-6">
+          <p className="text-xs text-[#555555] mt-4 md:mt-6 text-center">
             &copy; {new Date().getFullYear()} Aayush Lamichhane. All rights reserved.
           </p>
         </div>
 
         {/* Center Column: Navigation Links */}
-        <div className="flex flex-col gap-3 items-center">
-          <span className="text-xs font-semibold text-white tracking-wider uppercase mb-1">
+        <div className="flex flex-col gap-3 items-center text-center">
+          <span className="text-xs font-semibold text-white tracking-wider uppercase mb-1 text-center">
             Navigation
           </span>
-          <nav className="flex flex-col gap-2.5 items-center">
-            <a href="#services" className="text-sm text-[#888888] hover:text-white transition-colors w-fit">
+          <nav className="flex flex-col gap-2.5 items-center text-center">
+            <a href="#services" className="text-sm text-[#888888] hover:text-white transition-colors w-fit text-center">
               Services
             </a>
-            <a href="#pricing" className="text-sm text-[#888888] hover:text-white transition-colors w-fit">
+            <a href="#pricing" className="text-sm text-[#888888] hover:text-white transition-colors w-fit text-center">
               Pricing
             </a>
-            <a href="#about" className="text-sm text-[#888888] hover:text-white transition-colors w-fit">
+            <a href="#about" className="text-sm text-[#888888] hover:text-white transition-colors w-fit text-center">
               About
             </a>
-            <a href="#contact" className="text-sm text-[#888888] hover:text-white transition-colors w-fit">
+            <a href="#contact" className="text-sm text-[#888888] hover:text-white transition-colors w-fit text-center">
               Contact
             </a>
           </nav>
         </div>
 
         {/* Right Column: Contact Info */}
-        <div className="flex flex-col gap-3 items-center">
-          <span className="text-xs font-semibold text-white tracking-wider uppercase mb-1">
+        <div className="flex flex-col gap-3 items-center text-center">
+          <span className="text-xs font-semibold text-white tracking-wider uppercase mb-1 text-center">
             Contact
           </span>
-          <div className="flex flex-col gap-2.5 items-center">
+          <div className="flex flex-col gap-2.5 items-center text-center">
             <a
               href="mailto:alamichhane93@gmail.com"
-              className="text-sm text-[#888888] hover:text-white transition-colors flex items-center gap-2 w-fit"
+              className="text-sm text-[#888888] hover:text-white transition-colors flex items-center justify-center gap-2 w-fit text-center"
             >
               <Mail size={14} className="shrink-0" />
               <span>alamichhane93@gmail.com</span>
             </a>
             <a
               href="tel:9083386832"
-              className="text-sm text-[#888888] hover:text-white transition-colors flex items-center gap-2 w-fit"
+              className="text-sm text-[#888888] hover:text-white transition-colors flex items-center justify-center gap-2 w-fit text-center"
             >
               <Phone size={14} className="shrink-0" />
               <span>908-338-6832</span>
@@ -80,7 +80,7 @@ export function Footer() {
                 href="https://github.com/aayushlamichhane"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#888888] hover:text-white transition-colors"
+                className="text-[#888888] hover:text-white transition-colors text-center"
                 aria-label="GitHub"
               >
                 <GitHubIcon />
